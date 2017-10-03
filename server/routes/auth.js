@@ -25,13 +25,7 @@ authRoutes.post('/signup', (req, res, next) => {
     debug('creating user');
     const theUser = new User({
       username,
-      password: hashPass,
-      // firstName,
-      // lastName,
-      // email,
-      // city,
-      // country,
-      // phone
+      password: hashPass
     });
     return theUser.save()
     .then(user =>{

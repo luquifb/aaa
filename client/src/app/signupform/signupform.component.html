@@ -11,6 +11,10 @@
     <br>
   <label> Email </label>
   <input type="email" [(ngModel)]="formInfo.email" name="email"/>
-  
-  <button (click)="signup()"> signup </button>
+    <br>
+  <button (click)="signup()" class="btn btn-success"> signup </button>
+
+  <p>Do you have an account?</p>
+  <button [routerLink]="['/login']" class="btn btn-primary btn-sm">Login</button>
+
 </form>

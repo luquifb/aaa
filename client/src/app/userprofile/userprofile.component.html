@@ -6,13 +6,11 @@
 <div *ngIf="user">
   <h2> Hello {{ user.username }}!! </h2>
 
-  <p> Here's the user object </p>
-  <pre> {{ user | json }} </pre>
-
-  <p>Name: {{ user.name}}</p>
   <p>Username: {{user.username}}</p>
+  <p>Role: {{ user.role }}</p>
   <p>E-mail: {{ user.email }}</p>
-  <p>Phone number: {{ user.phone }}</p>
+  <p>Member since: {{ user.created_at }}</p>
+  <img src="{{user.pic_path}}" class="avatar" />
 
-  <button (click)="auth.logout().subscribe()"> logout </button>
+  <button (click)="auth.logout().subscribe()" class="btn btn-success"> Logout </button>
 </div>

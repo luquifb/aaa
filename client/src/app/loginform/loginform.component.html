@@ -5,10 +5,10 @@
     <br>
   <label> Password </label>
   <input type="password" [(ngModel)]="formInfo.password" name="password"/>
-
-  <button (click)="login()"> login </button>
+    <br>
+  <button (click)="login()" class="btn btn-success"> login </button>
 
   <p>Dont have an account?</p>
-  <button [routerLink]="['/signup']">Sign up</button>
+  <button [routerLink]="['/signup']" class="btn btn-primary btn-sm">Sign up</button>
 
 </form>
