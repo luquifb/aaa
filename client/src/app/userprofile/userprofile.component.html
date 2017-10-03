@@ -1,11 +1,18 @@
 <div *ngIf="!user">
-  <h2>NO USER LOGGED IN</h2>
+  <h3>You need to log in</h3>
+  <a [routerLink]="['/login']">Login</a>
 </div>
 
 <div *ngIf="user">
-  <h2> You are now logged in as {{ user.username }}!! </h2>
+  <h2> Hello {{ user.username }}!! </h2>
+
   <p> Here's the user object </p>
   <pre> {{ user | json }} </pre>
+
+  <p>Name: {{ user.name}}</p>
+  <p>Username: {{user.username}}</p>
+  <p>E-mail: {{ user.email }}</p>
+  <p>Phone number: {{ user.phone }}</p>
 
   <button (click)="auth.logout().subscribe()"> logout </button>
 </div>

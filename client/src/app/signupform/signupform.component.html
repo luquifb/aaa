@@ -2,9 +2,28 @@
   <h2> Signup </h2>
   <label> Username </label>
   <input type="text" [(ngModel)]="formInfo.username" name="username"/>
-  <br>
+    <br>
   <label> Password </label>
   <input type="password" [(ngModel)]="formInfo.password" name="password"/>
+    <br>
+  <label> First Name </label>
+  <input type="firstName" [(ngModel)]="formInfo.firstName" name="firstName"/>
+    <br>
+  <label> Last Name </label>
+  <input type="lastName" [(ngModel)]="formInfo.lastName" name="lastName"/>
+    <br>
+  <label> Email </label>
+  <input type="email" [(ngModel)]="formInfo.email" name="email"/>
+    <br>
+  <label> Phone </label>
+  <input type="phone" [(ngModel)]="formInfo.phone" name="phone"/>
+    <br>
+  <label> City </label>
+  <input type="city" [(ngModel)]="formInfo.city" name="city"/>
+    <br>
+  <label> Country </label>
+  <input type="country" [(ngModel)]="formInfo.country" name="country"/>
+    <br>
 
   <button (click)="signup()"> signup </button>
 </form>

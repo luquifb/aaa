@@ -1,0 +1,17 @@
+.navbar {
+  background-color: red;
+  margin: 0;
+  padding: 20px;
+}
+
+a {
+  margin: 20px;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.searcher {
+  width: 200px;
+  height: 20px;
+}
