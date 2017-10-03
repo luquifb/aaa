@@ -1,5 +1,12 @@
+
+
 <div class="container">
-  <ul>
-    <li></li>
-  </ul>
+  <div class="container-2" *ngFor="let movie of movies">
+
+    <a [routerLink]="['/product',product.id]">
+      <img src="{{ product.image}}" class="image" >
+    </a>
+
+    <p><i>{{ product.title }}</i></p>
+  </div>
 </div>

@@ -10,10 +10,13 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { RouterModule } from '@angular/router';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
 import { routes } from './routes';
+
 import { SignupformComponent } from './signupform/signupform.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { ProductsComponent } from './products/products.component';
     SignupformComponent,
     HeaderComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { ProductsComponent } from './products/products.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService],
+  providers: [AuthService, IsLoggedInService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
