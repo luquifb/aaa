@@ -12,7 +12,7 @@ authRoutes.post('/signup', (req, res, next) => {
   const {username, password} = req.body;
 
   if (!username || !password)
-    return res.status(400).json({ message: 'Provide username and password' });
+    return res.status(400).json({ message: 'Provide all the fields required please' });
 
   debug('Find user in DB');
 
@@ -25,7 +25,13 @@ authRoutes.post('/signup', (req, res, next) => {
     debug('creating user');
     const theUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      // firstName,
+      // lastName,
+      // email,
+      // city,
+      // country,
+      // phone
     });
     return theUser.save()
     .then(user =>{
