@@ -1,9 +1,5 @@
-<p>
-  product-detail works!
-</p>
 
-
-<h1> Product details </h1>
+<h3> Product details </h3>
 <!-- <a [routerLink]="['']"> Back to list </a>
 
 <div *ngIf="product">
@@ -25,11 +21,11 @@
 </div> -->
 
 <div class="container">
-  <h2>{{productToShow.title}}</h2>
+  <h4>{{productToShow.title}}</h4>
     <img [src]="productToShow.image" class="image">
-  <p>{{productToShow.price}}</p>
+  <p><b>Price:</b> ${{productToShow.price}}</p>
 
-  <p>{{productToShow.description}}</p>
+  <p><b>Description:</b> {{productToShow.description}}</p>
 
-    <button (click)="goHome()" class="btn">Home</button>
+    <a (click)="goHome()" class="btn btn-primary">Home</a>
 </div>

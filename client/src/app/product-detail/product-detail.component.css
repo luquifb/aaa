@@ -1,7 +1,7 @@
 
 .container {
-  padding: 30px;
-  margin: 30px;
+  /*padding: 30px;
+  margin: 30px;*/
   text-align: center;
 }
 
@@ -12,8 +12,8 @@
 }
 
 .image {
-  width: 400px;
-  height: 500px;
+  width: 200px;
+  height: 300px;
 }
 
 p {

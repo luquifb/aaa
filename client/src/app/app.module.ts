@@ -15,9 +15,9 @@ import { SignupformComponent } from './signupform/signupform.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductComponent } from './product/product.component';
 import { ProductService } from './services/product.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -29,8 +29,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HeaderComponent,
     FooterComponent,
     ProductListComponent,
-    ProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

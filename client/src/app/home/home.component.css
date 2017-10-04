@@ -3,3 +3,9 @@ h1 {
   color: #FF1100;
   padding: 30px;
 }
+
+
+.slider {
+  height: 600px;
+  width: 1200px;
+}
