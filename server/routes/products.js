@@ -1,87 +1,66 @@
 const express = require('express');
 const router = express.Router();
-const Product = require('../models/Product');
+const Product = require('./../models/Product');
+const mongoose = require('mongoose');
 
-// RETRIEVE: Product list
-router.get('/', (req, res, next) => {
-  Product.find({}, (err, products) => {
-    if (err) { return next(err); }
+const checkIDParam = (req,res,next) =>{
+  if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Specified id is not valid' });
+    return;
+  }
+  next();
+};
 
-    res.render('products/product_list', {
-      title:'Products List',
-      products: products
-    });
+
+/* GET Product listing. */
+router.get('/products', (req, res, next) => {
+  console.log("GET PRODUCTS");
+  Product.find()
+    .then(productsList => res.status(200).json(productsList))
+    .catch(e => res.status(500).json({error:e.message}));
+});
+
+/* CREATE a new Product. */
+router.post('/products', (req, res, next) => {
+  const {title, description, price, image} = req.body;
+  const theProduct = new Product({
+    title, description, price,
+    image: req.body.image || ''
   });
+
+  theProduct.save()
+    .then( p => res.status(200).json({
+      message: 'New Product created!',
+      product: p
+    }))
+    .catch( e => res.status(500).json({error:e.message}));
 });
 
-// CREATE: Print create form
-router.get('/new', (req, res, next) => {
-  res.render('products/new',{title:'Add a product'});
-});
-
-// RETRIEVE: Product detail
-router.get('/:id', (req, res, next) => {
-
-  const productId = req.params.id;
-
-  Product.findById(productId, (err, product) => {
-    if (err) { return next(err); }
-    res.render('products/product_detail',{title: 'Detail', product: product});
-  });
-});
-
-
-// UPDATE: Print update form
-router.get('/:id/edit', (req, res, next) => {
-  const productId = req.params.id;
-  Product.findById(productId, (err, product) => {
-    if (err) { return next(err); }
-    res.render('products/product_edit', { title:'Edit form', product: product });
-  });
-});
-
-// UPDATE: Update the object on DB
-router.post('/:id/edit', (req, res, next) => {
-  const productId = req.params.id;
-
-  const updates = {
-        title: req.body.title,
-        price: req.body.price,
-        image: req.body.image,
-        description: req.body.description
-  };
-  Product.findByIdAndUpdate(productId, updates, (err, product) => {
-    if (err){ return next(err); }
-    return res.redirect(`/${productId}`);
-  });
-});
-
-// DELETE: Delete the product via GET request
-router.get('/:id/delete', (req, res, next) => {
-  const productId = req.params.id;
-  Product.findByIdAndRemove(productId, (err, product) => {
-    if (err){ return next(err); }
-    return res.redirect('/');
-  });
+/* GET a single Product. */
+router.get('/products/:id', checkIDParam, (req, res) => {
+  Product.findById(req.params.id)
+    .then(p => res.status(200).json(p))
+    .catch(e => res.status(500).json({error:e.message}));
 });
 
 
-// CREATE: Create the object on DB and redirct.
-router.post('/products',(req,res,next) =>{
-  const productInfo = {
-      title: req.body.title,
-      price: req.body.price,
-      image: req.body.image,
-      description: req.body.description
-  };
 
-  // Create a new Product with the params
-  const newProduct = new Product(productInfo);
-  newProduct.save( (err) => {
-    if (err) { return next(err); }
-    // redirect to the list of products if it saves
-    return res.redirect('/');
-  });
+/* EDIT a Product. */
+router.put('/products/:id', checkIDParam, (req, res) => {
+  const {title, description, price, image} = req.body;
+  const updates = {title, description, price, image};
+
+  Product.findByIdAndUpdate(req.params.id, updates, {new:true})
+    .then(p => res.status(200).json(p))
+    .catch(e => res.status(500).json({error:e.message}));
 });
+
+router.falete = router.delete;
+router.falete('/products/:id',checkIDParam, (req, res) => {
+  Product.findByIdAndRemove(req.params.id)
+      .then(p => res.status(200).json(p))
+      .catch(e => res.status(500).json({error:e.message}));
+});
+
 
 module.exports = router;

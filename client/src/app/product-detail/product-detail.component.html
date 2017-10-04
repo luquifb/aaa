@@ -1,0 +1,35 @@
+<p>
+  product-detail works!
+</p>
+
+
+<h1> Product details </h1>
+<!-- <a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="product">
+  <div class="product-thumbnail">
+    <img height="300" [src]="product.image" />
+  </div>
+  <button (click)="deleteProduct()">Delete this product</button>
+  <div class="product-info">
+    <h2> {{ product.title }}&nbsp;</h2>
+    <h3> {{ product.price }} </h3>
+
+    <div *ngIf="product.specs.length">
+      <h4> Features </h4>
+      <ul>
+        <li *ngFor="let spec of product.specs"> {{ spec&nbsp;}} </li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <h2>{{productToShow.title}}</h2>
+    <img [src]="productToShow.image" class="image">
+  <p>{{productToShow.price}}</p>
+
+  <p>{{productToShow.description}}</p>
+
+    <button (click)="goHome()" class="btn">Home</button>
+</div>

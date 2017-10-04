@@ -14,9 +14,10 @@ import { routes } from './routes';
 import { SignupformComponent } from './signupform/signupform.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
 import { ProductService } from './services/product.service';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,9 @@ import { ProductService } from './services/product.service';
     SignupformComponent,
     HeaderComponent,
     FooterComponent,
-    ProductsComponent,
-    ProductComponent
+    ProductListComponent,
+    ProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
