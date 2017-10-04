@@ -1,34 +1,36 @@
+<div class="container col-lg-12">
 
-  <ul class="breadcrumb">
-    <li><a href="#">Categories</a></li>
-    <li><a href="#">Contemporary Art</a></li>
-    <li class="active">Artworks</li>
-  </ul>
+  <div class="col-lg-6 left">
 
-<div class="container">
+    <ul class="breadcrumb">
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Contemporary Art</a></li>
+      <li class="active">Artworks</li>
+    </ul>
 
-  <div class="searcher">
-    <label for="products"> Search: </label>
-    <input [(ngModel)]="product" placeholder="" type="text">
-  </div>
-
-
-  <div class="container-2" *ngFor="let product of products | filter : 'title' : product ">
-
-    <img [src]="product.image" height="300">
-    <h4>{{product.title}}</h4>
-    <a [routerLink]="['../','product',product.id]" class="btn btn-primary">Go to details</a>
+    <div class="searcher">
+      <label for="products"> Search: </label>
+      <input [(ngModel)]="product" placeholder="" type="text">
+    </div>
 
   </div>
 
+  <div class="col-lg-6 right">
 
+    <div class="container-2" *ngFor="let product of products | filter : 'title' : product ">
+
+      <img [src]="product.image" height="300">
+      <h4>{{product.title}}</h4>
+      <a [routerLink]="['../','product',product.id]" class="btn btn-primary">Go to details</a>
+
+    </div>
+
+    <ul class="pagination pagination-lg">
+      <li class="disabled"><a href="#">&laquo;</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">&raquo;</a></li>
+    </ul>
+  </div>
 </div>
-
-
-<ul class="pagination pagination-lg">
-  <li class="disabled"><a href="#">&laquo;</a></li>
-  <li class="active"><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>
