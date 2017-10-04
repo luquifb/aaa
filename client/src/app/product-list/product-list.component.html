@@ -1,5 +1,17 @@
+
+  <ul class="breadcrumb">
+    <li><a href="#">Categories</a></li>
+    <li><a href="#">Contemporary Art</a></li>
+    <li class="active">Artworks</li>
+  </ul>
+
 <div class="container">
-  <h2>Product List:</h2>
+
+  <div class="searcher">
+    <label for="products"> Search: </label>
+    <input [(ngModel)]="product" placeholder="" type="text">
+  </div>
+
 
   <div class="container-2" *ngFor="let product of products | filter : 'title' : product ">
 
@@ -8,4 +20,15 @@
     <a [routerLink]="['../','product',product.id]" class="btn btn-primary">Go to details</a>
 
   </div>
+
+
 </div>
+
+
+<ul class="pagination pagination-lg">
+  <li class="disabled"><a href="#">&laquo;</a></li>
+  <li class="active"><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>

@@ -1,11 +1,11 @@
-h1 {
+h2 {
   text-align: center;
-  color: #FF1100;
+  color: blue;
   padding: 30px;
 }
 
 
 .slider {
-  height: 600px;
-  width: 1200px;
+  height: 700px;
+  width: 1400px;
 }

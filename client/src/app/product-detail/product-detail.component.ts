@@ -27,5 +27,12 @@ export class ProductDetailComponent implements OnInit {
   goHome(){
     this.router.navigate(["home"])
   }
+  buy(){
+    this.router.navigate(["cart"])
+  }
+
+  bet(){
+    this.router.navigate(["product/id"])
+  }
 
 }
