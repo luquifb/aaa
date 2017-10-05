@@ -56,4 +56,5 @@ export class ProductService {
     return this.products[id]
   }
 
-}
+
+  }

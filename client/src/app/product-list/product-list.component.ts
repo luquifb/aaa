@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
-  providers:[ProductService]
 })
+
 export class ProductListComponent implements OnInit {
 
   constructor(private myService:ProductService) { }
@@ -15,4 +15,5 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

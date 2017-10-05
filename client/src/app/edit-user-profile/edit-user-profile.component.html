@@ -1,0 +1,12 @@
+
+<form >
+  <h3> Edit User profile </h3>
+  <label> Username </label>
+  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
+    <br>
+  <label> Password </label>
+  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
+    <br>
+  <button (click)="editProfile()" class="btn btn-success"> Save Changes </button>
+
+</form>

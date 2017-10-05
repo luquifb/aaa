@@ -6,16 +6,23 @@ import {LoginformComponent} from './loginform/loginform.component';
 import {SignupformComponent} from './signupform/signupform.component';
 import {ProductListComponent} from './product-list/product-list.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
+import {ProductCreateComponent} from './product-create/product-create.component';
+import {EditUserProfileComponent} from './edit-user-profile/edit-user-profile.component';
+import {EditProductComponent} from './edit-product/edit-product.component';
 
 import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home',  component: ProductListComponent },
-    { path: 'user',  component: UserprofileComponent,canActivate: [ IsLoggedInService ]  },
+    { path: 'user',  component: UserprofileComponent, canActivate: [ IsLoggedInService ]  },
+    { path: 'user/edit-profile',  component: EditUserProfileComponent },
     { path: 'login',  component: LoginformComponent },
     { path: 'signup',  component: SignupformComponent },
     { path: 'product-list',  component: ProductListComponent },
     { path: 'product/:id', component: ProductDetailComponent },
+    { path: 'product-create',  component: ProductCreateComponent },
+    { path: 'product/edit/:id',  component: EditProductComponent },
+
     { path: '**', redirectTo: '' }
 ];

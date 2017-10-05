@@ -18,6 +18,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './services/product.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ProductCreateComponent } from './product-create/product-create.component';
+import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     FooterComponent,
     ProductListComponent,
     ProductDetailComponent,
-    FilterPipe
+    FilterPipe,
+    ProductCreateComponent,
+    EditUserProfileComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,

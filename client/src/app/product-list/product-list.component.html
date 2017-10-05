@@ -1,6 +1,6 @@
 <div class="container col-lg-12">
 
-  <div class="col-lg-6 left">
+  <div class="col-lg-3 left">
 
     <ul class="breadcrumb">
       <li><a href="#">Categories</a></li>
@@ -13,9 +13,11 @@
       <input [(ngModel)]="product" placeholder="" type="text">
     </div>
 
+    <a [routerLink]="['../','product-create']" class="btn btn-primary">Create Product</a>
+
   </div>
 
-  <div class="col-lg-6 right">
+  <div class="col-lg-9 right">
 
     <div class="container-2" *ngFor="let product of products | filter : 'title' : product ">
 
@@ -24,6 +26,7 @@
       <a [routerLink]="['../','product',product.id]" class="btn btn-primary">Go to details</a>
 
     </div>
+  </div>
 
     <ul class="pagination pagination-lg">
       <li class="disabled"><a href="#">&laquo;</a></li>
@@ -32,5 +35,4 @@
       <li><a href="#">3</a></li>
       <li><a href="#">&raquo;</a></li>
     </ul>
-  </div>
 </div>
