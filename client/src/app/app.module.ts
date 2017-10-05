@@ -36,7 +36,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     FilterPipe,
     ProductCreateComponent,
     EditUserProfileComponent,
-    EditProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

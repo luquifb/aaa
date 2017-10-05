@@ -19,7 +19,7 @@
 
   <div class="col-lg-9 right">
 
-    <div class="container-2" *ngFor="let product of products | filter : 'title' : product ">
+    <div class="container-2" *ngFor="let product of products | filter : 'title' : product">
 
       <img [src]="product.image" height="300">
       <h4>{{product.title}}</h4>
