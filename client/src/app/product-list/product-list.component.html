@@ -1,6 +1,6 @@
 <div class="container col-lg-12">
 
-  <div class="col-lg-3 left">
+  <div class="col-lg-3">
 
     <ul class="breadcrumb">
       <li><a href="#">Categories</a></li>
@@ -14,18 +14,20 @@
     </div>
 
     <a [routerLink]="['../','product-create']" class="btn btn-primary">Create Product</a>
-
+    
   </div>
 
-  <div class="col-lg-9 right">
-
-    <div class="container-2" *ngFor="let product of products | filter : 'title' : product">
-
-      <img [src]="product.image" height="300">
-      <h4>{{product.title}}</h4>
-      <a [routerLink]="['../','product',product.id]" class="btn btn-primary">Go to details</a>
-
-    </div>
+  <div class="col-md-9">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail" *ngFor="let product of products | filter : 'title' : product">
+          <img [src]="product.image" height="300">
+          <div class="caption">
+            <h4>{{product.title}}</h4>
+            <p>${{product.price}}</p>
+            <p><a [routerLink]="['../','product',product.id]" class="btn btn-primary" role="button">See details</a> <a [routerLink]="['/cart']" class="btn btn-default" role="button">Add to Cart</a></p>
+          </div>
+        </div>
+      </div>
   </div>
 
     <ul class="pagination pagination-lg">

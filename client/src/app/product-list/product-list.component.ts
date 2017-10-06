@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
 })
 
 export class ProductListComponent implements OnInit {
-
+products:any
   constructor(private myService:ProductService) { }
-    products = this.myService.products
+
 
   ngOnInit() {
+    this.myService.getProducts()
+      .subscribe( allProducts => this.products = allProducts)
   }
 
 }

@@ -9,6 +9,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {ProductCreateComponent} from './product-create/product-create.component';
 import {EditUserProfileComponent} from './edit-user-profile/edit-user-profile.component';
 import {EditProductComponent} from './edit-product/edit-product.component';
+import { CartListComponent } from './cart-list/cart-list.component';
 
 import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 
@@ -23,6 +24,7 @@ export const routes: Routes = [
     { path: 'product/:id', component: ProductDetailComponent },
     { path: 'product-create',  component: ProductCreateComponent },
     { path: 'product/edit/:id',  component: EditProductComponent },
+    { path: 'cart',  component: CartListComponent },
 
     { path: '**', redirectTo: '' }
 ];

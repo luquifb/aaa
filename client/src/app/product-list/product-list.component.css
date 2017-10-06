@@ -25,3 +25,7 @@ p {
   margin: 20px;
   font-size: 30px;
 }
+
+.list {
+  display: inline-block;
+}

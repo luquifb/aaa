@@ -21,6 +21,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { CartListComponent } from './cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     FilterPipe,
     ProductCreateComponent,
     EditUserProfileComponent,
-    EditProductComponent
+    EditProductComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,

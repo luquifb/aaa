@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.css']
 })
+
 export class ProductCreateComponent implements OnInit {
-  products: Object[];
-  newProduct: Object = {};
+  products: any;
+  newProduct: Object = {
+    title:"",
+    price:""};
 
 
-  constructor() {
-    this.products = this.products;
+  constructor(public myService:ProductService, private router: Router) {
   }
 
   ngOnInit() {
-    this.products = this.products;
   }
 
   addProduct() {
-    this.products.push(this.newProduct);
-    this.newProduct = {};
+    this.products.newProduct(this.newProduct)
+    .map(product => console.log(product))
+    .subscribe(
+      () => this.router.navigate(['/products'])
+    );
   }
 }
