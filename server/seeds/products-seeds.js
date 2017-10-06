@@ -6,21 +6,21 @@ mongoose.connect(dbURL, {useMongoClient: true});
 
 const products = [
   {
-    title: 'Yoga Mat',
+    title: 'Art 1',
     price: 29.99,
-    image: 'http://i.imgur.com/XtpFrW7.jpg',
+    image: 'https://www.google.es/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjD5cet7tvWAhVCa1AKHcrvC68QjRwIBw&url=https%3A%2F%2Fwww.google.com%2Fculturalinstitute%2Fbeta%2Fcategory%2Fart-movement&psig=AOvVaw2LY5ozGuDGwzkpLXS6B1Bo&ust=1507374659263696',
     description: 'Keeps your knees safe, slip proof, sweat proof. Top of the line',
   },
   {
-    title: '20" monitor',
+    title: 'Obra de arte',
     price: 249.99,
-    image: 'http://i.imgur.com/5ICGeY0.jpg',
+    image: 'https://www.google.es/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjD5cet7tvWAhVCa1AKHcrvC68QjRwIBw&url=https%3A%2F%2Fwww.google.com%2Fculturalinstitute%2Fbeta%2Fcategory%2Fart-movement&psig=AOvVaw2LY5ozGuDGwzkpLXS6B1Bo&ust=1507374659263696',
     description: 'Large enough for even the heaviest gamer. Crisp, fresh, no dead pixels guarantee',
   },
   {
-    title: 'Soylent',
+    title: 'artistic',
     price: 54.99,
-    image: 'http://media.gq.com/photos/57c6f39209f7003c4afd2c4d/3:2/w_800/drink_gallery5.546e2142f4c6.jpg',
+    image: 'https://www.google.es/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjD5cet7tvWAhVCa1AKHcrvC68QjRwIBw&url=https%3A%2F%2Fwww.google.com%2Fculturalinstitute%2Fbeta%2Fcategory%2Fart-movement&psig=AOvVaw2LY5ozGuDGwzkpLXS6B1Bo&ust=1507374659263696',
     description: 'You never have to leave your computer! All you can eat nutrition!',
   }
 ];

@@ -27,8 +27,13 @@ export class ProductService {
           .map(res => res.json())
   }
 
+  getProduct(id){
+    return this.http.get(`${BASE_URL}/products/:id`)
+          .map(res => res.json())
+  }
+
   newProduct(product) {
-    return this.http.post(`${BASE_URL}/routes/create-product`, product )
+    return this.http.post(`${BASE_URL}/products/create-product`, product )
           .map(res => res.json())
   }
 

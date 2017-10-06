@@ -17,13 +17,13 @@ export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home',  component: ProductListComponent },
     { path: 'user',  component: UserprofileComponent, canActivate: [ IsLoggedInService ]  },
-    { path: 'user/edit-profile',  component: EditUserProfileComponent },
+    { path: 'user/edit-profile/:id',  component: EditUserProfileComponent },
     { path: 'login',  component: LoginformComponent },
     { path: 'signup',  component: SignupformComponent },
     { path: 'product-list',  component: ProductListComponent },
     { path: 'product/:id', component: ProductDetailComponent },
-    { path: 'product-create',  component: ProductCreateComponent },
     { path: 'product/edit/:id',  component: EditProductComponent },
+    { path: 'product-create',  component: ProductCreateComponent },
     { path: 'cart',  component: CartListComponent },
 
     { path: '**', redirectTo: '' }

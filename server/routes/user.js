@@ -17,6 +17,7 @@ router.get('/profile', (req, res, next) => {
 
 // SEE EDIT MY PROFILE
 router.get('/edit-profile/:id', (req, res, next) => {
+  console.log("entro en back")
   User.findById(req.params.id , (err, user) => {
     if (err) { return next(err); }
     res.render('user/edit-profile', { user: user });

@@ -16,7 +16,8 @@ export class ProductDetailComponent implements OnInit {
 
 
   ngOnInit() {
-    
+    this.service.getProduct(this.productId)
+      .subscribe( productDetail => this.productToShow = productDetail)
     }
 
   goHome(){
@@ -28,10 +29,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   bet(){
-    this.router.navigate(["product/id"])
+    // this.router.navigate(["product/id"])
   }
 
   editProduct(){
-    this.router.navigate(["product/edit/id"])
+    // this.router.navigate(["product/edit/id"])
   }
 }
