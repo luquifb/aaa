@@ -13,3 +13,12 @@ h2 {
 .btn {
   margin: 10px;
 }
+
+.cta {
+  margin: 80px;
+}
+
+.card-img-top {
+  width: 250px;
+  height: 150px;
+}
