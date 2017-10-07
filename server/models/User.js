@@ -6,6 +6,10 @@ const userSchema = new Schema({
   password: String,
   name: String,
   email: String,
+  cart: [{
+    productId: { type: Schema.Types.ObjectId, ref: 'Product', required: true },
+    qty: Number
+  }],
   pic_path: {
     type: String,
     default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxHMZ61_YBq_vUIGkG7MHRA9cSztvgRAMIdGu-i9b0RFb4zLDa_g'

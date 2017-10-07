@@ -8,7 +8,7 @@ const BASEURL = environment.BASEURL + "/auth";
 
 @Injectable()
 export class AuthService {
-
+  userId
   private user:object;
   private userLoginEvent:EventEmitter<any> = new EventEmitter<any>();
   private options = {withCredentials:true};
@@ -63,4 +63,14 @@ export class AuthService {
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
     }
+
+    update(productId) {
+      return this.http.put(`${BASEURL}/${this.user["_id"]}`, {productId: productId}, this.options)
+        .map(res => res.json())
+        .map(response_object => {
+          this.emitUserLoginEvent(response_object.user)
+        })
+        .catch(this.handleError)
+    }
+
 }

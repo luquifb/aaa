@@ -2,16 +2,11 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const cartSchema = new Schema({
-  title: String,
-  productId: String,
-  userId: String,
-  ownerId: String,
-  price: Number,
-  image: String,
-  date: String,
-  quantity: Number,
-  completed: Boolean,
-  removed: Boolean
+  buyer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  products: [{
+    productId: { type: Schema.Types.ObjectId, ref: 'Product', required: true },
+    qty: Number
+  }]
 }, {
   timestamps: {
     createdAt: 'created_at',

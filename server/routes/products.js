@@ -34,11 +34,34 @@ router.get('/:id', (req, res, next) => {
    .reject(err =>console.log(err))
 });
 
+// EDIT PRODUCT
+router.put('/edit/:id', (req, res) => {
+  const {
+    title,
+    price
+  } = req.body;
+  const updates = {
+    title,
+    price
+  };
 
+  Product.findByIdAndUpdate(req.params.id, updates, {
+      new: true
+    })
+    .then(p => res.status(200).json(p))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
+});
 
-
-
-
+// DELETE PRODUCT
+router.delete('/delete/:id', (req, res) => {
+  Product.findByIdAndRemove(req.params.id)
+    .then(p => res.status(200).json(p))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
+});
 
 
 module.exports = router;

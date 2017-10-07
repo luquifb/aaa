@@ -1,18 +1,17 @@
 
 <h3> Product details </h3>
 
-<div class="container">
+<div class="container" *ngIf="productToShow">
 
-  <div class="row col-lg-6">
+  <div class="row">
     <div class="">
       <div class="thumbnail">
-        <img [src]="productToShow.image" class="image">
+        <img [src]="" class="image">
         <div class="caption">
           <h3>{{productToShow.title}}</h3>
-          <h3>{{product.title}}</h3>
 
           <h5><b>Price:</b> ${{productToShow.price}}</h5>
-          <p><b>Description:</b> {{productToShow.description}}</p>
+          <p><b>Description:</b> </p>
           <p><a href="#" class="btn btn-primary" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Pujar</a></p>
         </div>
       </div>
@@ -21,6 +20,7 @@
   <div class="row col-lg-6">
 
   </div>
+
 
   <!-- <h4>{{productToShow.title}}</h4>
 
@@ -46,7 +46,5 @@
   <ul>
     <li>{{ review.name }}: {{ review.description }}</li>
   </ul> -->
-
-
 
 </div>

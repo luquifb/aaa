@@ -22,6 +22,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
   addProduct() {
+    console.log("nuevo producto")
     this.products.newProduct(this.newProduct)
     .map(product => console.log(product))
     .subscribe(

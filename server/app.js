@@ -1,20 +1,19 @@
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const session    = require('express-session');
+const express  = require('express');
+const path     = require('path');
+const favicon  = require('serve-favicon');
+const session  = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const logger = require('morgan');
-const passport   = require('passport');
+const logger   = require('morgan');
+const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const debug = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
+const debug    = require('debug')("angularauth:"+path.basename(__filename).split('.')[0]);
 const authRoutes = require('./routes/auth');
 const productsRouter = require('./routes/products');
 const index    = require('./routes/index');
-const reviews    = require('./routes/reviews');
-
+const reviews  = require('./routes/reviews');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors     = require('cors');
 
 const app = express();
 
