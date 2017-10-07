@@ -12,6 +12,7 @@ const authRoutes = require('./routes/auth');
 const productsRouter = require('./routes/products');
 const index    = require('./routes/index');
 const reviews  = require('./routes/reviews');
+// const cart  = require('./routes/cart');
 const mongoose = require('mongoose');
 const cors     = require('cors');
 
@@ -60,6 +61,7 @@ app.use('/', index);
 app.use('/auth', authRoutes);
 app.use('/products', productsRouter);
 app.use('/', reviews);
+// app.use('/', cart);
 
 
 // catch 404 and forward to error handler
