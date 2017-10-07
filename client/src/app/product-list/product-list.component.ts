@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 
 export class ProductListComponent implements OnInit {
 products:any
-  constructor(private service:ProductService, private auth: AuthService) { }
+  constructor(private service:ProductService,
+              private auth: AuthService) { }
 
 
   ngOnInit() {

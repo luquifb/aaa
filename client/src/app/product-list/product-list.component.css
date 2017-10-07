@@ -29,3 +29,15 @@ p {
 .list {
   display: inline-block;
 }
+
+.categories {
+  text-align: center;
+  padding: 10px 0;
+}
+
+hr{
+  border:         none;
+  border-left:    1px solid #777;
+  height:         80vh;
+  width:          1px;
+}

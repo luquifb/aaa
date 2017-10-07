@@ -31,4 +31,9 @@ product:object;
           .map(res => res.json())
   }
 
+  // addProductToCart(id) {
+  //   return this.http.get(`${BASEURL}/${id}`)
+  //         .map(res => res.json())
+  // }
+
 }

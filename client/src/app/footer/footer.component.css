@@ -1,6 +1,24 @@
-.footer {
+footer {
   text-align:center;
-  /*background-color: blue;
+  background-color: #2196f3;
   margin-top: 200px;
-  padding: 30px;*/
+  padding: 30px;
+  color: #FFF;
+}
+
+
+li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 15px;
+}
+
+.title {
+  color: #b2dbfb;
+
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
 }

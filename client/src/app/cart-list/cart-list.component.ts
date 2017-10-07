@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-list',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
+  products:any
 
-  constructor() { }
+  constructor(private service:ProductService,
+              private auth: AuthService) { }
 
   ngOnInit() {
+    // this.service.addProductToCart()
+    //   .subscribe( addToCart => this.products = addToCart)
   }
 
 }

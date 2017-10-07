@@ -1,6 +1,6 @@
 h2 {
   text-align: center;
-  color: blue;
+  color: #2196f3;
   padding: 30px;
 }
 
@@ -8,4 +8,8 @@ h2 {
 .slider {
   height: 500px;
   width: 800px;
+}
+
+.btn {
+  margin: 10px;
 }
