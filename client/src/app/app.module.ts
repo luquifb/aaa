@@ -22,6 +22,7 @@ import { ProductCreateComponent } from './product-create/product-create.componen
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { CartListComponent } from './cart-list/cart-list.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CartListComponent } from './cart-list/cart-list.component';
     ProductCreateComponent,
     EditUserProfileComponent,
     EditProductComponent,
-    CartListComponent
+    CartListComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

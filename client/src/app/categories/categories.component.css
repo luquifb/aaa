@@ -1,0 +1,13 @@
+.card {
+  magin: 20px;
+  padding: 20px;
+}
+
+.card-img {
+  width: 710px;
+  height: 300px;
+  }
+
+.thumbnail {
+  padding: 20px;
+}

@@ -15,7 +15,7 @@ export class ProductCreateComponent implements OnInit {
     price:""};
 
 
-  constructor(public myService:ProductService, private router: Router) {
+  constructor(public service:ProductService, private router: Router) {
   }
 
   ngOnInit() {
