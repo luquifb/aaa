@@ -16,11 +16,14 @@ router.post('/create-product', function(req, res){
   product = new Product({
     title: req.body.title,
     price: req.body.price,
+    artist: req.body.artist,
+    description: req.body.description,
+    category: req.body.category
   });
 
  product.save()
   .then(result => {
-    console.log("created!!")
+    console.log("product created!!")
     res.status(200).json(result)
   }).catch(err => console.log(err))
 });
@@ -38,11 +41,17 @@ router.get('/:id', (req, res, next) => {
 router.put('/edit/:id', (req, res) => {
   const {
     title,
-    price
+    price,
+    artist,
+    description,
+    category,
   } = req.body;
   const updates = {
     title,
-    price
+    price,
+    artist,
+    description,
+    category,
   };
 
   Product.findByIdAndUpdate(req.params.id, updates, {

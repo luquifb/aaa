@@ -14,7 +14,8 @@ import "rxjs/add/operator/mergeMap";
 export class ProductDetailComponent implements OnInit {
   productToShow:Object
   http;
-  BASE_URL;
+  BASEURL;
+  product;
 
   constructor(private route: ActivatedRoute,
               private service: ProductService,
@@ -32,10 +33,7 @@ export class ProductDetailComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.service.getProduct(this.productId)
-    //   .subscribe( productDetail => this.productToShow = productDetail)
-    // }
-}
+  }
 
   goHome(){
     this.router.navigate(["home"])
@@ -47,12 +45,13 @@ export class ProductDetailComponent implements OnInit {
 
   editProduct(product){
     // this.router.navigate(["product/edit/id"])
-    return this.http.put(`${this.BASE_URL}/products/edit/${product._id}`, product)
+    return this.http.put(`${this.BASEURL}/products/edit/${product._id}`, product)
       .map((res) => res.json());
   }
 
   deleteProduct(id) {
-    return this.http.delete(`${this.BASE_URL}/products/delete/${id}`)
+    console.log(id)
+    return this.http.delete(`${this.BASEURL}/products/delete/${id}`, id)
       .map((res) => res.json());
   }
 
