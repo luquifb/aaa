@@ -9,9 +9,9 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="thumbnail" *ngFor="let product of products | filter : 'title' : product">
-        <img [src]="product.image" height="300">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products | filter : 'title' : product">
+      <div class="thumbnail">
+        <img [src]="product.image" class="image">
         <div class="caption">
           <h4>{{product.title}}</h4>
           <p>${{product.price}}</p>
