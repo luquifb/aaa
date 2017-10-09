@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express  = require('express');
 const path     = require('path');
 const favicon  = require('serve-favicon');
@@ -15,6 +17,7 @@ const reviews  = require('./routes/reviews');
 // const cart  = require('./routes/cart');
 const mongoose = require('mongoose');
 const cors     = require('cors');
+require('dotenv').load();
 
 const app = express();
 
@@ -46,7 +49,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'angular auth passport secret shh',
+  secret: 'all about art',
   resave: true,
   saveUninitialized: true,
   cookie : { httpOnly: true, maxAge: 60*60*24*365 },
@@ -63,6 +66,9 @@ app.use('/products', productsRouter);
 app.use('/', reviews);
 // app.use('/', cart);
 
+app.use(function(req, res) {
+  res.sendfile(__dirname + '/public/index.html');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
