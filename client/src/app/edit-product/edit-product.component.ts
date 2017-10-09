@@ -12,7 +12,7 @@ export class EditProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  editProfile() {
+  editProduct() {
 
   }
 }

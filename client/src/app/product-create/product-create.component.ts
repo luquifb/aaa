@@ -30,12 +30,11 @@ export class ProductCreateComponent implements OnInit {
   }
 
   addProduct() {
-    console.log("nuevo producto" + this.newProd)
     const {title, price, artist, description, category} = this.newProd;
     this.service.newProduct(title, price, category, artist, description)
     .map(product => console.log(product))
     .subscribe(
-      () => this.router.navigate(['/products'])
+      () => this.router.navigate(['/product-list'])
     );
   }
 }

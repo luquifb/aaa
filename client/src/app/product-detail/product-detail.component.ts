@@ -12,7 +12,7 @@ import "rxjs/add/operator/mergeMap";
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  productToShow:Object
+  productToShow:any
   http;
   BASEURL;
   product;
@@ -49,10 +49,12 @@ export class ProductDetailComponent implements OnInit {
       .map((res) => res.json());
   }
 
-  deleteProduct(id) {
-    console.log(id)
-    return this.http.delete(`${this.BASEURL}/products/delete/${id}`, id)
-      .map((res) => res.json());
+  deleteProduct() {  
+    this.service.deleteProduct(this.productToShow._id)
+      .subscribe(
+        () => this.router.navigate(['/product-list'])
+      );
   }
 
 }
+

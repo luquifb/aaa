@@ -27,16 +27,12 @@ product:object;
 
   newProduct(title, price, category, artist, description) {
     return this.http.post(`${BASEURL}/create-product`, {title, price, category, artist, description} )
-      .map(res => {
-        res.json()
-        console.log(`8=======D ${res.json()}`)
-      })
+        .map(res => res.json())
   }
 
   deleteProduct(id) {
-    console.log(id)
     return this.http.delete(`${BASEURL}/delete/${id}`)
-      .map((res) => res.json());
+        .map((res) => res.json());
   }
 
   // addProductToCart(id) {

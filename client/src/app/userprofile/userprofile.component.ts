@@ -17,4 +17,5 @@ export class UserprofileComponent implements OnInit {
   ngOnInit() {
   }
 
+  delete () {}
 }
