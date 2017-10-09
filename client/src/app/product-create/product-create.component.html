@@ -2,19 +2,19 @@
 <form >
   <h3>Add new product!</h3>
     <label for="product-title"></label>
-    <input type="text" [(ngModel)]="newProduct.title" name="title" placeholder="Title">
+    <input type="text" [(ngModel)]="newProd.title" name="title" placeholder="Title">
       <br>
     <label for="product-price"></label>
-    <input type="number" [(ngModel)]="newProduct.price" name="price" placeholder="Price">
+    <input type="number" [(ngModel)]="newProd.price" name="price" placeholder="Price">
       <br>
     <label for="product-artist"></label>
-    <input type="text" [(ngModel)]="newProduct.artist" name="artist" placeholder="Artist">
+    <input type="text" [(ngModel)]="newProd.artist" name="artist" placeholder="Artist">
       <br>
     <label for="product-description"></label>
-    <input type="text" [(ngModel)]="newProduct.description" name="description" placeholder="Description">
+    <input type="text" [(ngModel)]="newProd.description" name="description" placeholder="Description">
       <br>
     <label for="product-category"></label>
-    <input type="text" [(ngModel)]="newProduct.category" name="category" placeholder="Category">
+    <input type="text" [(ngModel)]="newProd.category" name="category" placeholder="Category">
       <br>
   <button class="btn" (click)="addProduct()" class="btn btn-success">Add New Product</button>
 </form>

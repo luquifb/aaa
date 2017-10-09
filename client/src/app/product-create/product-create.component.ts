@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export class ProductCreateComponent implements OnInit {
   products: any;
-  newProduct: Object = {
+  newProd = {
     title:"",
     price:"",
     artist: "",
@@ -30,8 +30,9 @@ export class ProductCreateComponent implements OnInit {
   }
 
   addProduct() {
-    console.log("nuevo producto" + this.newProduct)
-    this.products.newProduct(this.newProduct)
+    console.log("nuevo producto" + this.newProd)
+    const {title, price, artist, description, category} = this.newProd;
+    this.service.newProduct(title, price, category, artist, description)
     .map(product => console.log(product))
     .subscribe(
       () => this.router.navigate(['/products'])
