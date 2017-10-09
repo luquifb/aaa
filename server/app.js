@@ -17,7 +17,8 @@ const reviews  = require('./routes/reviews');
 // const cart  = require('./routes/cart');
 const mongoose = require('mongoose');
 const cors     = require('cors');
-require('dotenv').load();
+
+// require('dotenv').load();
 
 const app = express();
 
@@ -66,9 +67,9 @@ app.use('/products', productsRouter);
 app.use('/', reviews);
 // app.use('/', cart);
 
-app.use(function(req, res) {
-  res.sendfile(__dirname + '/public/index.html');
-});
+// app.use(function(req, res) {
+//   res.sendFile(__dirname + './public/index.html');
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
