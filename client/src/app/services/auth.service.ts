@@ -73,4 +73,10 @@ export class AuthService {
         .catch(this.handleError)
     }
 
+    // deleteUser(id)
+    //   return this.http.get(`${BASEURL}/delete/${id}`)
+    //   .map((res) => res.json());
 }
+
+
+

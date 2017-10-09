@@ -1,5 +1,5 @@
 
-<form >
+<form *ngIf="user.role=='Seller'">
   <h3> Edit Product </h3>
   <label> title </label>
   <input type="text" [(ngModel)]="formInfo.title" name="title"/>

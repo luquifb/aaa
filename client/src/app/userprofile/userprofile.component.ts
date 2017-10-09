@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userprofile',
@@ -7,8 +8,9 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
-  user:object;
-  constructor(public auth:AuthService) {
+  user:any;
+
+  constructor(public auth:AuthService, private router: Router) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
         .subscribe( user => this.user=user );
@@ -17,5 +19,10 @@ export class UserprofileComponent implements OnInit {
   ngOnInit() {
   }
 
-  delete () {}
+  // delete() {  
+  //   this.auth.deleteUser(this.user._id)
+  //     .subscribe(
+  //       () => this.router.navigate(['/home'])
+  //     );
+  // }
 }

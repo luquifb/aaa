@@ -3,6 +3,19 @@
     <small><a [routerLink]="['/categories']">All categories</a></small>
   </h1>
 
+  <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Categories
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">Art</a></li>
+        <li><a href="#">Contemporary Art</a></li>
+        <li><a href="#">Design</a></li>
+      </ul>
+    </div>
+
+
   <div class="searcher">
     <label for="products"> Search: </label>
     <input [(ngModel)]="product" placeholder="" type="text">
