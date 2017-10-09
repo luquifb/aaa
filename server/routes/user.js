@@ -14,6 +14,8 @@ router.put('/:id', (req, res, next) => {
     User.Save( user => res.status(200).json(user))
   });
 });
+
+
 // // GET USER PROFILE
 // router.get('/profile/:id', (req, res, next) => {
 //     res.render('user/profile', {

@@ -11,6 +11,7 @@ import {EditUserProfileComponent} from './edit-user-profile/edit-user-profile.co
 import {EditProductComponent} from './edit-product/edit-product.component';
 import {CartListComponent} from './cart-list/cart-list.component';
 import {CategoriesComponent} from './categories/categories.component';
+import {ReviewComponent} from './review/review.component';
 
 import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 
@@ -25,6 +26,7 @@ export const routes: Routes = [
     { path: 'product-list',  component: ProductListComponent },
     { path: 'product/:id', component: ProductDetailComponent },
     { path: 'product/edit/:id',  component: EditProductComponent },
+    { path: 'product/review/:id',  component: ReviewComponent },    
     { path: 'product-create',  component: ProductCreateComponent },
     { path: 'cart',  component: CartListComponent },
 

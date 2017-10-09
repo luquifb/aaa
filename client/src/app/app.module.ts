@@ -23,6 +23,8 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { ReviewComponent } from './review/review.component';
+import { ReviewService } from './services/review.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { CategoriesComponent } from './categories/categories.component';
     EditUserProfileComponent,
     EditProductComponent,
     CartListComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { CategoriesComponent } from './categories/categories.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService, ProductService],
+  providers: [AuthService, IsLoggedInService, ProductService, ReviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

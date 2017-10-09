@@ -11,7 +11,7 @@
       <a class="navbar-brand logo" [routerLink]="['/']">AAA</a>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" aria-expanded="true">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" aria-expanded="true"  *ngIf="!isLoggedIn">
         <ul class="nav navbar-nav navbar-right">
           <li><a [routerLink]="['/']">Home</a></li>
           <li><a [routerLink]="['/product-list']">Products</a></li>

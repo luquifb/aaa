@@ -13,7 +13,8 @@ const productSchema = new Schema({
     default: 'http://images.mentalfloss.com/sites/default/files/tumblr_mn6cyzot1n1r6g8i2o2_1280_0.jpg?resize=1100x740'
     },
   userId: String,
-  ownerId: String
+  ownerId: String,
+  review: { type: Schema.Types.ObjectId, ref: 'Review' }
 }, {
   timestamps: {
     createdAt: 'created_at',
