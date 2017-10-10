@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product.service';
-import { AuthService } from '../services/auth.service';
+import { CartService } from '../services/cart.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,10 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-  products:any
+  products:any;
 
-  constructor(private service:ProductService,
-              private auth: AuthService) { }
+  constructor(private service:CartService) {
+ 
+   }
 
   ngOnInit() {
     // this.service.addProductToCart()

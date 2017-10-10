@@ -25,6 +25,8 @@ import { CartListComponent } from './cart-list/cart-list.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ReviewComponent } from './review/review.component';
 import { ReviewService } from './services/review.service';
+import { CartService } from './services/cart.service';
+import { FileSelectDirective } from "ng2-file-upload";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ReviewService } from './services/review.service';
     EditProductComponent,
     CartListComponent,
     CategoriesComponent,
-    ReviewComponent
+    ReviewComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,7 @@ import { ReviewService } from './services/review.service';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService, ProductService, ReviewService],
+  providers: [AuthService, IsLoggedInService, ProductService, ReviewService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

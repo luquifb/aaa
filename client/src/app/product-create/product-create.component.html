@@ -16,5 +16,10 @@
     <label for="product-category"></label>
     <input type="text" [(ngModel)]="newProd.category" name="category" placeholder="Category">
       <br>
+    <label for="image"></label>
+    <!-- <input type="file" [(ngModel)]="newProd.image" name="image" value="file" placeholder="Product Image"> -->
+    <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+    
+    <br>
   <button class="btn" (click)="addProduct()" class="btn btn-success">Add New Product</button>
 </form>

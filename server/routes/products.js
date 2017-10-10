@@ -3,6 +3,8 @@ const router = express.Router();
 const Product = require('../models/Product');
 const mongoose = require('mongoose');
 const User   = require('../models/User');
+const upload = require('../config/multer');
+// const upload  = multer({ dest: '../public/uploads/' });
 
 // VIEW ALL PRODUCTS
 router.get('/all-products' , (req, res, next) => {
@@ -12,13 +14,14 @@ router.get('/all-products' , (req, res, next) => {
 });
 
 //CREATE PRODUCT
-router.post('/create-product', function(req, res){
+router.post('/create-product', upload.single('file'), function(req, res){
   product = new Product({
     title: req.body.title,
     price: req.body.price,
     artist: req.body.artist,
     description: req.body.description,
-    category: req.body.category
+    category: req.body.category,
+    image: `/uploads/${req.file.filename}`
   });
 
  product.save()
@@ -44,14 +47,14 @@ router.put('/edit/:id', (req, res) => {
     price,
     artist,
     description,
-    category,
+    category
   } = req.body;
   const updates = {
     title,
     price,
     artist,
     description,
-    category,
+    category
   };
 
   Product.findByIdAndUpdate(req.params.id, updates, {

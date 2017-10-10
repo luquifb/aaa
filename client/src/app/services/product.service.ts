@@ -25,8 +25,8 @@ product:object;
           .map(res => res.json())
   }
 
-  newProduct(title, price, category, artist, description) {
-    return this.http.post(`${BASEURL}/create-product`, {title, price, category, artist, description} )
+  newProduct(title, price, category, artist, description, image) {
+    return this.http.post(`${BASEURL}/create-product`, {title, price, category, artist, description, image} )
         .map(res => res.json())
   }
 
@@ -35,9 +35,5 @@ product:object;
         .map((res) => res.json());
   }
 
-  // addProductToCart(id) {
-  //   return this.http.get(`${BASEURL}/${id}`)
-  //         .map(res => res.json())
-  // }
 
 }

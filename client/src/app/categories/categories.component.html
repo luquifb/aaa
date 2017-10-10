@@ -8,25 +8,7 @@
             <small>Categories</small>
           </h1>
 
-          <div class="card">
-            <img class="card-img" src="http://placehold.it/750x300" alt="">
-            <div class="thumbnail">
-              <h2>Art</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Enter &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img class="card-img" src="http://placehold.it/750x300" alt="">
-            <div class="thumbnail">
-              <h2>Photography</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Enter &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card">
+          <div class="card" *ngFor="let product of products">
             <img class="card-img" src="http://placehold.it/750x300" alt="">
             <div class="thumbnail">
               <h2>{{product.category}}</h2>
