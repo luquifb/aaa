@@ -3,19 +3,6 @@
     <small><a [routerLink]="['/categories']">All categories</a></small>
   </h1>
 
-  <!-- <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Categories
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#">Art</a></li>
-        <li><a href="#">Contemporary Art</a></li>
-        <li><a href="#">Design</a></li>
-      </ul>
-    </div> -->
-
-
   <div class="searcher">
     <label for="products"><i class="material-icons middle">search</i></label>
     <input [(ngModel)]="product" placeholder="        Search.." type="text">
@@ -29,7 +16,7 @@
           <h4>{{product.title}}</h4>
             <span class="label label-default">{{ product.category }}</span>          
           <p>${{product.price}}</p>
-          <p><a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a> <a (click)="getProductData(product)" class="btn btn-default" role="button">Add to Cart</a></p>
+          <p><a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a> <a [routerLink]="['/artist-list']" class="btn btn-default" role="button">Author</a></p>
         </div>
       </div>
     </div>
