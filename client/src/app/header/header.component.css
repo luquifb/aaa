@@ -28,3 +28,12 @@ span {
   height: 60%;
   width: 60%;
 }
+
+.username {
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.divider-2 {
+  vertical-align: middle;
+}

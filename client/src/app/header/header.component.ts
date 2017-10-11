@@ -10,8 +10,13 @@ import {IsLoggedInService} from '../services/isLoggedIn.canactivate.service';
 })
 
 export class HeaderComponent implements OnInit {
-
-  constructor(public auth:AuthService, private router: Router) { }
+  user:any;
+  
+  constructor(public auth:AuthService, private router: Router) { 
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user=user );
+  }
 
   ngOnInit() {
   }
