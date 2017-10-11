@@ -27,6 +27,7 @@ import { ReviewComponent } from './review/review.component';
 import { ReviewService } from './services/review.service';
 import { CartService } from './services/cart.service';
 import { FileSelectDirective } from "ng2-file-upload";
+import { ArtistListComponent } from './artist-list/artist-list.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FileSelectDirective } from "ng2-file-upload";
     CartListComponent,
     CategoriesComponent,
     ReviewComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    ArtistListComponent
   ],
   imports: [
     BrowserModule,

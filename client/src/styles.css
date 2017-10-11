@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5 {
 
 .thumbnail {
     border-radius: 7px;
-    color: #FFF;
+    /* color: #FFF; */
   }
 
   .left {

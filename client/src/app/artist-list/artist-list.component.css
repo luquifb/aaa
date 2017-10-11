@@ -1,0 +1,17 @@
+.searcher {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+  }
+
+  p {
+      margin: 10px;
+  }
+
+th {
+    text-align: center;
+}
+
+.container-table {
+    margin: 30px;
+}

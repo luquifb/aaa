@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="my-4">Artist List</h1>
+
+    <div class="searcher">
+      <label for="products"><i class="material-icons middle">search</i></label>
+      <input [(ngModel)]="product" placeholder="        Search.." type="text">
+    </div>
+  
+    <!-- <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products | filter : 'artist' : product">
+        <div class="thumbnail">
+          <div class="caption">
+            <h4>{{ product.artist }}</h4>
+              <span class="label label-default">Artist</span>          
+            <p><a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See his work</a></p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  <div class="container-table">
+    <table class="table">
+        <thead class="center">
+          <tr>
+            <th>Name</th>
+            <th>Condition</th>
+            <th>Artwork</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let product of products | filter : 'artist' : product">
+          <tr>
+            <td>{{ product.artist }}</td>
+            <td><span class="label label-default">Artist</span></td>
+            <td><a [routerLink]="['../','product', product._id]" class="btn btn-default btn-xs" role="button">See Artist Work</a></td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+  </div>
+  
+

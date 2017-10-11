@@ -59,8 +59,11 @@ export class ProductCreateComponent implements OnInit {
       form.append('description', this.newProd.description);
       form.append('category', this.newProd.category);
     };
-        console.log("entro el form")
         this.uploader.uploadAll();
+        console.log("entro el form")
+
+            this.router.navigate(['/product-list']);
+            
         this.uploader.onCompleteItem = (res) => this.service.newProduct(title, price, artist, description, category, image)
         .map(product => console.log(product))
         .subscribe(
