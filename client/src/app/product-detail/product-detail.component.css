@@ -33,3 +33,7 @@ p {
   width: 250px;
   height: 150px;
 }
+
+img {
+  border-radius: 7px;
+}

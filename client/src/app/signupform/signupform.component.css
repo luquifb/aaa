@@ -1,0 +1,22 @@
+.center { 
+    text-align: center;
+}
+
+form {
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.account {
+    display: inline-block;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.jumbotron {
+    width: 50%;
+    height: 50%;   
+    margin-left: 300px;  
+}
