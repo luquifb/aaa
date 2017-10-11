@@ -7,7 +7,7 @@
 
   <div class="row">
     <div class="col-md-8">
-      <img [src]="productToShow.image" class="img">
+      <img [src]="'http://localhost:3000' + productToShow.image" class="img">
     </div>
 
     <div class="col-md-4">
@@ -17,8 +17,8 @@
         <p>$ {{productToShow.price}}</p>
 
         <p>
-            <a [routerLink]="['/product/edit', id]" class="btn btn-primary">Edit Product</a>
-          <a href="#" class="btn btn-primary" role="button">Buy</a>
+            <a [routerLink]="['/product/edit', id]" class="btn btn-default">Edit Product</a>
+          <a href="#" class="btn btn-default" role="button">Buy</a>
           <a (click)="deleteProduct()" class="btn btn-danger" role="button">Delete</a>
         </p>
     </div>
@@ -52,10 +52,10 @@
       </a>
     </div>
   </div>
-
+<!-- 
   <div>
     <app-review></app-review>
-  </div>
+  </div> -->
 </div>
 
 

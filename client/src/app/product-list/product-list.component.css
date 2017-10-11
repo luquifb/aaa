@@ -4,7 +4,7 @@
 }
 
 .image {
-  width: 400px;
+  width: 350px;
   height: 200px;
 }
 
@@ -40,4 +40,12 @@ hr{
   border-left:    1px solid #777;
   height:         80vh;
   width:          1px;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+a {
+  color: #777;
 }

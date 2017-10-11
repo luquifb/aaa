@@ -4,7 +4,7 @@ const Product = require('../models/Product');
 const mongoose = require('mongoose');
 const User   = require('../models/User');
 const upload = require('../config/multer');
-// const upload  = multer({ dest: '../public/uploads/' });
+const path = require('path');
 
 // VIEW ALL PRODUCTS
 router.get('/all-products' , (req, res, next) => {

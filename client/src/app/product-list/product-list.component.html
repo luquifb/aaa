@@ -17,24 +17,24 @@
 
 
   <div class="searcher">
-    <label for="products"> Search: </label>
-    <input [(ngModel)]="product" placeholder="" type="text">
+    <label for="products"><i class="material-icons middle">search</i></label>
+    <input [(ngModel)]="product" placeholder="         Search.." type="text">
   </div>
 
   <div class="row">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products | filter : 'title' : product | filter: 'category' ">
       <div class="thumbnail">
-        <img [src]="product.image" class="image">
+        <img [src]="'http://localhost:3000' + product.image" class="image">
         <div class="caption">
           <h4>{{product.title}}</h4>
             <span class="label label-default">{{ product.category }}</span>          
           <p>${{product.price}}</p>
-          <p><a [routerLink]="['../','product', product._id]" class="btn btn-primary" role="button">See details</a> <a (click)="getProductData(product)" class="btn btn-default" role="button">Add to Cart</a></p>
+          <p><a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a> <a (click)="getProductData(product)" class="btn btn-default" role="button">Add to Cart</a></p>
         </div>
       </div>
     </div>
   </div>
   <div class="categories">
-    <a [routerLink]="['../','product-create']" class="btn btn-primary">Create Product</a>
+    <a [routerLink]="['../','product-create']" class="btn btn-default">Create Product</a>
   </div>
 </div>

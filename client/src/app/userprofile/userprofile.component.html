@@ -1,7 +1,7 @@
 <div class="container" *ngIf='user'>
     <div *ngIf="!user">
       <h3>You need to log in</h3>
-      <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
+      <a [routerLink]="['/login']" class="btn btn-default">Login</a>
     </div>
 
   <div *ngIf="user">
@@ -30,7 +30,7 @@
         </div>
 
         <p>
-          <a [routerLink]="['/user/edit-profile', user._id]" class="btn btn-primary">Edit Profile</a>
+          <a [routerLink]="['/user/edit-profile', user._id]" class="btn btn-default">Edit Profile</a>
           <button (click)="auth.logout().subscribe()" class="btn btn-success"> Logout </button>
           <button (click)="delete()" class="btn btn-danger"> Delete my Profile </button>
 

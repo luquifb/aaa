@@ -1,9 +1,7 @@
 h2 {
   text-align: center;
-  color: #2196f3;
   padding: 30px;
 }
-
 
 .slider {
   height: 500px;
@@ -21,4 +19,23 @@ h2 {
 .card-img-top {
   width: 250px;
   height: 150px;
+  border-radius: 7px;
+}
+
+.jumbotron {
+  background-image: url("https://learnodo-newtonic.com/wp-content/uploads/2017/02/Metamorphosis-of-Narcissus-1937-Salvador-Dali.jpg");
+}
+
+.display-3, .lead {
+  color: #FFF;
+}
+
+.card-text {
+  color: #555;
+}
+
+.grey {
+  background-color:#999;
+  display: relative;
+  margin: 50px;
 }

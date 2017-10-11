@@ -11,6 +11,7 @@ const BASEURL:string = environment.BASEURL + "/products";
 @Injectable()
 export class ProductService {
 product:object;
+private options = {withCredentials:true};
 
   constructor(private http: Http) {
     }
@@ -26,7 +27,7 @@ product:object;
   }
 
   newProduct(title, price, category, artist, description, image) {
-    return this.http.post(`${BASEURL}/create-product`, {title, price, category, artist, description, image} )
+    return this.http.post(`${BASEURL}/create-product`, {title, price, category, artist, description, image}, this.options )
         .map(res => res.json())
   }
 
