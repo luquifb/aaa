@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +12,7 @@ import { CartService } from '../services/cart.service';
 export class ProductListComponent implements OnInit {
 products:any
 
-  constructor(private prodService:ProductService, private cartService: CartService) { }
+  constructor(private prodService:ProductService) { }
 
   ngOnInit() {
     this.prodService.getProducts()

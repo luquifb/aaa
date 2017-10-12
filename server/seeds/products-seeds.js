@@ -79,13 +79,45 @@ const products = [
     description: 'Switzerland-based illustrator and artist Christo Dagorov created this unusual series of pencil drawings that transform the texture of lips into trees, the aerial layout of a city, and even other human forms.',
   },
   {
-    title: 'Drunks, Prophets and Pieces of Shit ',
+    title: 'Drunks, Prophets and Pieces of Shit',
     price: 4100,
     artist: 'Russell Nachman',
     category: 'Work on paper',
     image: 'https://d7hftxdivxxvm.cloudfront.net/?resize_to=fit&width=350&height=269&quality=95&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FOGKfugWc9S2mypt36cJKCQ%2Flarge.jpg',
     description: 'Watercolor, acrylic & gold leaf on paper. Russell Nachman (American, 1966) use of allegory serves his critical, and sometimes harsh, look at his roots as well as our culture at large.',
   },
+  {
+    title: 'Farbduett mit Spiegel',
+    price: 5600,
+    artist: 'Christian Megert',
+    category: 'Art',
+    image: 'https://d7hftxdivxxvm.cloudfront.net/?resize_to=fill&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FC1pEfEQzZXV7_iew8mHkyA%2Flarger.jpg&width=800&height=450&quality=95',
+    description: 'Excellent limited editions and uniques – by Fils Fine Arts/ Art Edition Fils, Germanys oldest and most experienced publisher for original prints and multiples, since 1870.',
+  },
+  {
+    title: 'Central Avenue',
+    price: 400,
+    artist: 'Kymm Swank',
+    category: 'Painting',
+    image: 'https://d32dm0rphc51dk.cloudfront.net/3gLDc4Y8_YGEwhs1uMveng/large.jpg',
+    description: 'Wallspace is a vibrant Los Angeles art gallery exhibiting abstract, contemporary, & street art with up to 50 emerging and established artists based in Los Angeles.',
+  },
+  {
+    title: 'After Bansky',
+    price: 380,
+    artist: 'Bansky',
+    category: 'Work on paper',
+    image: 'https://d7hftxdivxxvm.cloudfront.net/?resize_to=fit&width=350&height=351&quality=95&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F3VOofuVxcWkK1uvC20AgfA%2Flarge.jpg',
+    description: 'With the rubber stamps of the West Country Prince, verso, with full margins, sheet 700 x 700 mm (27 1/2 x 27 1/2 in)',
+  },
+  {
+    title: 'Portrait of an artist',
+    price: 15000,
+    artist: 'Eduardo Hoffmann',
+    category: 'Painting',
+    image: 'https://d32dm0rphc51dk.cloudfront.net/DDGTrZ0UBLS9AdytythNOg/larger.jpg',
+    description: 'Mixed technique on canvas',
+  }
 ];
 
 const users = [

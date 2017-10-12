@@ -21,11 +21,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-import { CartListComponent } from './cart-list/cart-list.component';
 import { CategoriesComponent } from './categories/categories.component';
-import { ReviewComponent } from './review/review.component';
-import { ReviewService } from './services/review.service';
-import { CartService } from './services/cart.service';
 import { FileSelectDirective } from "ng2-file-upload";
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -49,9 +45,7 @@ import { WorkOnPaperCategoryComponent } from './work-on-paper-category/work-on-p
     ProductCreateComponent,
     EditUserProfileComponent,
     EditProductComponent,
-    CartListComponent,
     CategoriesComponent,
-    ReviewComponent,
     FileSelectDirective,
     ArtistListComponent,
     LogoutComponent,
@@ -66,7 +60,7 @@ import { WorkOnPaperCategoryComponent } from './work-on-paper-category/work-on-p
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService, ProductService, ReviewService, CartService],
+  providers: [AuthService, IsLoggedInService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
