@@ -44,8 +44,7 @@
           <li><a [routerLink]="['/artist-list']">Artists</a></li>
 
           <li class="divider-2"><a>|</a></li>
-
-          <li class="dropdown">
+          <li *ngIf="user" class="dropdown">
             <a class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-expanded="true">{{ user.username }}</a>
             <ul class="dropdown-menu" role="menu">
               <li><a [routerLink]="['/user']">My Profile</a></li>
