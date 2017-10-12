@@ -5,15 +5,14 @@
 
         <div class="col-md-8">
           <h1 class="my-4">Categories
-            <small>AAA</small>
+            <!-- <small>All</small> -->
           </h1>
 
           <div class="card" *ngFor="let product of products">
-            <img class="card-img" src="http://placehold.it/750x300" alt="">
+            <img class="card-img" [src]="'http://localhost:3000' + product.image">
             <div class="thumbnail">
               <h2>{{product.category}}</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-default">Enter &rarr;</a>
+              <a [routerLink]="['/product-list']" class="btn btn-default">Show me more &rarr;</a>
             </div>
           </div>
 

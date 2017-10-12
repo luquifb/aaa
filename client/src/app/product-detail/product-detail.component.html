@@ -11,22 +11,42 @@
     </div>
 
     <div class="col-md-4">
-      <h3>Product Description</h3>
+      <h3>About the Work</h3>
         <p>{{productToShow.description}}</p>
       <h3>Price</h3>
         <p>$ {{productToShow.price}}</p>
 
         <p>
-          <a href="#buyModal" data-toggle="modal" class="btn btn-default btn-lg" role="button">Love it!</a> 
+          <a href="#buyModal" data-toggle="modal" class="btn btn-default btn-lg" role="button">Contact Artist</a>
           <!-- <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
           sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">Bottom</button>            -->
           <a *ngIf="user.role==='Seller'" [routerLink]="['/product/edit', id]" class="btn btn-default">Edit Product</a>
-          <a *ngIf="user.role==='Seller'" (click)="deleteProduct()" class="btn btn-sm btn-danger" role="button">Delete</a>
+          <a (click)="deleteProduct()" class="btn btn-sm btn-danger" role="button">Delete</a>
         </p>
     </div>
   </div>
 
-  <h3 class="title">Related Products</h3>
+  <div class="modal" id="buyModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 class="modal-title">{{productToShow.artist}}</h3>
+        </div>
+        <div class="modal-body">
+          <h5>Get in touch:</h5>
+          <p><em>artist@aaart.co</em></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="title-2">Other Artworks:
+      <span class="label label-default">{{ productToShow.category }}</span>
+  </h3>
 
   <div class="row">
 
@@ -54,7 +74,7 @@
       </a>
     </div>
   </div>
-<!-- 
+<!--
   <div>
     <app-review></app-review>
   </div> -->
@@ -62,7 +82,7 @@
 
 
 
-  
+
 
   <!-- <ul>
     <li>{{ review.name }}: {{ review.description }}</li>

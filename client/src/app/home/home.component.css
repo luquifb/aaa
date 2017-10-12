@@ -17,13 +17,14 @@ h2 {
 }
 
 .card-img-top {
-  width: 250px;
+  width: 255px;
   height: 150px;
   border-radius: 7px;
 }
 
 .jumbotron {
-  /* background-image: url("https://learnodo-newtonic.com/wp-content/uploads/2017/02/Metamorphosis-of-Narcissus-1937-Salvador-Dali.jpg"); */
+  background-image: url("http://gabyherbstein.com/files/fotos/894.jpg");
+   /*background-image: url("https://learnodo-newtonic.com/wp-content/uploads/2017/02/Metamorphosis-of-Narcissus-1937-Salvador-Dali.jpg"); */
 }
 
 .display-3, .lead {
@@ -38,4 +39,9 @@ h2 {
   background-color:#999;
   display: relative;
   margin: 50px;
+}
+
+.heading {
+  margin: 30px;
+  color: #FFF;
 }

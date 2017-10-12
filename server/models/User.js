@@ -12,7 +12,7 @@ const userSchema = new Schema({
   }],
   pic_path: {
     type: String,
-    default: './assets/avatar-dali.png'
+    default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxHMZ61_YBq_vUIGkG7MHRA9cSztvgRAMIdGu-i9b0RFb4zLDa_g'
   },
   pic_name: {
     type:String,

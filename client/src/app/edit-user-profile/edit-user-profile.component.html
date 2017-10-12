@@ -1,12 +1,22 @@
-
-<form >
-  <h2> Edit User profile </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
-    <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
-    <br>
-  <button (click)="editProfile()" class="btn btn-success"> Save Changes </button>
-
-</form>
+<div class="container">
+  <form class="form-horizontal jumbotron center">
+    <h2> Edit User profile </h2>
+        <div class="form-group">
+            <label for="inputUsername" >Username</label>
+          <div>
+            <input type="text" [(ngModel)]="formInfo.username" name="username" class="form-control" placeholder="Username">
+          </div>
+        </div>
+      <div class="form-group">
+        <label for="inputPassword" >Password</label>
+        <div>
+          <input type="password" [(ngModel)]="formInfo.password" class="form-control" name="password" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="account">
+          <button (click)="editProfile()" class="btn btn-success"> Save Changes </button>
+        </div>
+      </div>
+  </form>
+</div>

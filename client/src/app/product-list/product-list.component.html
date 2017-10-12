@@ -9,14 +9,17 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products | filter : 'title' : product | filter: 'category' ">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products | filter : 'title' : product">
       <div class="thumbnail">
         <img [src]="'http://localhost:3000' + product.image" class="image">
         <div class="caption">
           <h4>{{product.title}}</h4>
-            <span class="label label-default">{{ product.category }}</span>          
+            <span class="label label-default">{{ product.category }}</span>
           <p>${{product.price}}</p>
-          <p><a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a> <a [routerLink]="['/artist-list']" class="btn btn-default" role="button">Author</a></p>
+          <p>
+            <a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a> 
+            <a [routerLink]="['/artist-list']" class="btn btn-default" role="button">Author</a>
+          </p>
         </div>
       </div>
     </div>

@@ -37,3 +37,15 @@ p {
 img {
   border-radius: 7px;
 }
+
+.title-2 {
+  margin: 60px;
+}
+
+.modal-body {
+  display: inline-block;
+}
+
+.modal-title {
+  color: #777;
+}

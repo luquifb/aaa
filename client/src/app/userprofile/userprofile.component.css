@@ -2,9 +2,73 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 1px solid #999;
+  /* border: 1px solid #999; */
 }
 
 .title {
   text-align: left;
+}
+
+/*.container-2 {
+  display: inline-block;
+  margin: 15px;
+}
+
+.image {
+  width: 350px;
+  height: 200px;
+}
+
+img {
+  border-radius: 7px;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.container {
+
+  text-align: center;
+}
+
+
+.searcher {
+  text-align: center;
+  margin: 20px;
+  font-size: 30px;
+}
+
+.list {
+  display: inline-block;
+}
+
+.categories {
+  text-align: center;
+  padding: 10px 0;
+}
+
+hr{
+  border:         none;
+  border-left:    1px solid #777;
+  height:         80vh;
+  width:          1px;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+a {
+  color: #777;
+}*/
+
+.user-data {
+  font-size: 18px;
+  display: inline-block;
+}
+
+.user-info {
+  margin: 30px;
 }

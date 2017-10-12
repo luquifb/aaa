@@ -14,13 +14,13 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" aria-expanded="true"  *ngIf="!isLoggedIn">
         <ul class="nav navbar-nav navbar-right">
-          <li><a [routerLink]="['/login']">Login</a></li>
+          <li><a routerLink='/login'>Login</a></li>
           <li><a [routerLink]="['/signup']">Sign up</a></li>
 
           <li><a [routerLink]="['/']">Home</a></li>
           <li><a [routerLink]="['/product-list']">Products</a></li>
           <li><a [routerLink]="['/categories']">Categories</a></li>
-          <li><a [routerLink]="['/artist-list']">Artists</a></li>   
+          <li><a [routerLink]="['/artist-list']">Artists</a></li>
 
           <li class="divider-2"><a>|</a></li>
           <li class="dropdown">
@@ -28,7 +28,7 @@
             <ul class="dropdown-menu" role="menu">
               <li><a [routerLink]="['/user']">My Profile</a></li>
               <li class="divider"></li>
-              <li><a >Edit profile</a></li>
+              <li><a [routerLink]="['/user/edit-profile', user._id]">Edit profile</a></li>
               <li class="divider"></li>
               <li><a (click)="auth.logout().subscribe()">Logout</a></li>
             </ul>

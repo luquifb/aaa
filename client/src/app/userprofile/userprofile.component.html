@@ -14,31 +14,28 @@
       <img src="{{user.pic_path}}" class="avatar" />
     </div>
 
-    <div class="col-md-4">
-
-        <div>
-          <h4>Username:</h4> <p>{{user.username}}</p>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="thumbnail">
+          <div class="user-info">
+            <h4>Username: <span class="user-data">{{user.username}}</span></h4>
+          </div>
+          <div class="user-info">
+            <h4>E-mail: <span class="user-data">{{user.email}}</span></h4>
+          </div>
+          <div class="user-info">
+            <h4>Member since: <span class="user-data">{{ user.created_at | date:'dd/MM/yyyy' }}</span></h4>
+          </div>
+          <div class="user-info">
+            <h4>Role: <span class="label label-default">{{ user.role }}</span></h4>
+          </div>
+          <div class="user-info">
+            <p>
+              You are tired of us?
+              <button (click)="delete()" class="btn btn-danger btn-xs"> Delete my Profile </button>
+            </p>
+          </div>
         </div>
-        <div>
-          <h4>Role:</h4> <p>{{ user.role }}</p>
-        </div>
-        <div>
-          <h4>E-mail:</h4> <p>{{ user.email }}</p>
-        </div>
-        <div>
-          <h4>Member since:</h4> <p>{{ user.created_at | date:'dd/MM/yyyy' }}</p>
-        </div>
-
-        <div>
-          <a [routerLink]="['/user/edit-profile', user._id]" class="btn btn-default">Edit Profile</a>
-          <button (click)="auth.logout().subscribe()" class="btn btn-success"> Logout </button>
-        
-          <p>
-            You are tired of us?
-            <button (click)="delete()" class="btn btn-danger btn-xs"> Delete my Profile </button>
-          </p>
-        </div>
-    </div>
+      </div>
   </div>
 </div>
 </div>
