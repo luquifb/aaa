@@ -17,14 +17,14 @@
             <span class="label label-default">{{ product.category }}</span>
           <p>${{product.price}}</p>
           <p>
-            <a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a> 
+            <a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a>
             <a [routerLink]="['/artist-list']" class="btn btn-default" role="button">Author</a>
           </p>
         </div>
       </div>
     </div>
   </div>
-  <div class="categories">
-    <a [routerLink]="['../','product-create']" class="btn btn-default">Create Product</a>
-  </div>
+  <!-- <div class="categories">
+    <a [routerLink]="['../','product-create']" class="btn btn-default">Upload Artwork</a>
+  </div> -->
 </div>

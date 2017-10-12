@@ -29,6 +29,10 @@ import { CartService } from './services/cart.service';
 import { FileSelectDirective } from "ng2-file-upload";
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ArtCategoryComponent } from './art-category/art-category.component';
+import { PhotographyCategoryComponent } from './photography-category/photography-category.component';
+import { PaintingCategoryComponent } from './painting-category/painting-category.component';
+import { WorkOnPaperCategoryComponent } from './work-on-paper-category/work-on-paper-category.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { LogoutComponent } from './logout/logout.component';
     ReviewComponent,
     FileSelectDirective,
     ArtistListComponent,
-    LogoutComponent
+    LogoutComponent,
+    ArtCategoryComponent,
+    PhotographyCategoryComponent,
+    PaintingCategoryComponent,
+    WorkOnPaperCategoryComponent
   ],
   imports: [
     BrowserModule,

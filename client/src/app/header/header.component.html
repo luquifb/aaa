@@ -14,15 +14,37 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" aria-expanded="true"  *ngIf="!isLoggedIn">
         <ul class="nav navbar-nav navbar-right">
-          <li><a routerLink='/login'>Login</a></li>
-          <li><a [routerLink]="['/signup']">Sign up</a></li>
 
           <li><a [routerLink]="['/']">Home</a></li>
-          <li><a [routerLink]="['/product-list']">Products</a></li>
-          <li><a [routerLink]="['/categories']">Categories</a></li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Artworks<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a [routerLink]="['/product-list']">All</a></li>
+              <li class="divider"></li>
+              <li><a [routerLink]="['../','product-create']">Upload Artwork</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Categories<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a [routerLink]="['/categories']">All</a></li>
+              <li class="divider"></li>
+              <li><a [routerLink]="['/categories/art']">Art</a></li>
+              <li class="divider"></li>
+              <li><a [routerLink]="['/categories/photography']">Photography</a></li>
+              <li class="divider"></li>
+              <li><a [routerLink]="['/categories/painting']">Painting</a></li>
+              <li class="divider"></li>
+              <li><a [routerLink]="['/categories/work-on-paper']">Work on Paper</a></li>
+            </ul>
+          </li>
+
           <li><a [routerLink]="['/artist-list']">Artists</a></li>
 
           <li class="divider-2"><a>|</a></li>
+
           <li class="dropdown">
             <a class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-expanded="true">{{ user.username }}</a>
             <ul class="dropdown-menu" role="menu">
@@ -33,13 +55,29 @@
               <li><a (click)="auth.logout().subscribe()">Logout</a></li>
             </ul>
           </li>
-
-
+<!--
           <li>
             <a [routerLink]="['/user']">
               <i class="material-icons">fingerprint</i>
             </a>
+          </li> -->
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"><i class="material-icons">fingerprint</i></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a [routerLink]="['/login']">Login</a></li>
+            </ul>
           </li>
+
+          <li class="divider-2"><a>|</a></li>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Not user?</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a [routerLink]="['/signup']">Sign up</a></li>
+            </ul>
+          </li>
+
         </ul>
 
     </div>

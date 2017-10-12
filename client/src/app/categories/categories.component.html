@@ -1,20 +1,54 @@
+
     <div class="container">
       <div class="row">
 
         <div class="col-md-2"></div>
 
         <div class="col-md-8">
-          <h1 class="my-4">Categories
-            <!-- <small>All</small> -->
-          </h1>
+          <h1 class="my-4">All Categories</h1>
 
-          <div class="card" *ngFor="let product of products">
-            <img class="card-img" [src]="'http://localhost:3000' + product.image">
-            <div class="thumbnail">
-              <h2>{{product.category}}</h2>
-              <a [routerLink]="['/product-list']" class="btn btn-default">Show me more &rarr;</a>
+          <div class="jumbotron cat-1 thumbnail-2">
+            <h1 class="title">Art</h1>
+            <p><a [routerLink]="['/categories/art']" class="btn btn-default">Show me more &rarr;</a></p>
+          </div>
+
+          <div class="jumbotron cat-2 thumbnail-2">
+            <h1 class="title">Painting</h1>
+            <p><a [routerLink]="['/categories/painting']" class="btn btn-default">Show me more &rarr;</a></p>
+          </div>
+
+          <div class="jumbotron cat-3 thumbnail-2">
+            <h1 class="title">Photography</h1>
+            <p><a [routerLink]="['/categories/photography']" class="btn btn-default">Show me more &rarr;</a></p>
+          </div>
+
+          <div class="jumbotron cat-4 thumbnail-2">
+            <h1 class="title">Work on Paper</h1>
+            <p><a [routerLink]="['/categories/work-on-paper']" class="btn btn-default">Show me more &rarr;</a></p>
+          </div>
+          <!-- <div class="card">
+            <img class="card-img" src="./assets/art.png">
+            <div class="thumbnail-2">
+              <h2>Art</h2>
+              <a [routerLink]="['/categories/art']" class="btn btn-default">Show me more &rarr;</a>
             </div>
           </div>
+
+          <div class="card">
+            <img class="card-img" src="./assets/painting.png">
+            <div class="thumbnail-2">
+              <h2>Painting</h2>
+              <a [routerLink]="['/categories/painting']" class="btn btn-default">Show me more &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="thumbnail-2">
+              <img class="card-img" src="./assets/photography.png">
+              <h2>Photography</h2>
+              <a [routerLink]="['/categories/photography']" class="btn btn-default">Show me more &rarr;</a>
+            </div>
+          </div> -->
 
         </div>
 
@@ -22,3 +56,16 @@
 
       </div>
     </div>
+
+
+
+
+
+    <!-- <h2><span class="label label-default"><a [routerLink]="['/categories']">{{ product.category }}</a></span></h2> -->
+
+
+    <!-- <div class="btn-group btn">
+      <a class="btn btn-default"  *ngFor="let product of products">{{product.category}}</a>
+    </div> -->
+
+    <!-- <a class="btn btn-default btn-lg btn-block" *ngFor="let product of products">{{product.category}}</a> -->

@@ -12,6 +12,10 @@ import {EditUserProfileComponent} from './edit-user-profile/edit-user-profile.co
 import {EditProductComponent} from './edit-product/edit-product.component';
 import {CartListComponent} from './cart-list/cart-list.component';
 import {CategoriesComponent} from './categories/categories.component';
+import {ArtCategoryComponent} from './art-category/art-category.component';
+import {PhotographyCategoryComponent} from './photography-category/photography-category.component';
+import {PaintingCategoryComponent} from './painting-category/painting-category.component';
+import {WorkOnPaperCategoryComponent} from './work-on-paper-category/work-on-paper-category.component';
 import {ReviewComponent} from './review/review.component';
 import {ArtistListComponent} from './artist-list/artist-list.component';
 
@@ -23,15 +27,19 @@ export const routes: Routes = [
     { path: 'user',  component: UserprofileComponent, canActivate: [ IsLoggedInService ]  },
     { path: 'user/edit-profile/:id',  component: EditUserProfileComponent },
     { path: 'login',  component: LoginformComponent },
-    { path: 'logout',  component: LogoutComponent },    
+    { path: 'logout',  component: LogoutComponent },
     { path: 'signup',  component: SignupformComponent },
     { path: 'categories',  component: CategoriesComponent },
+    { path: 'categories/art',  component: ArtCategoryComponent },
+    { path: 'categories/photography', component: PhotographyCategoryComponent },
+    { path: 'categories/painting', component: PaintingCategoryComponent },
+    { path: 'categories/work-on-paper', component: WorkOnPaperCategoryComponent },
     { path: 'product-list',  component: ProductListComponent },
     { path: 'product/:id', component: ProductDetailComponent },
     { path: 'product/edit/:id',  component: EditProductComponent },
-    { path: 'product/review/:id',  component: ReviewComponent },    
+    { path: 'product/review/:id',  component: ReviewComponent },
     { path: 'product-create',  component: ProductCreateComponent },
-    { path: 'artist-list',  component: ArtistListComponent },    
+    { path: 'artist-list',  component: ArtistListComponent },
     { path: 'cart',  component: CartListComponent },
 
     { path: '**', redirectTo: '' }

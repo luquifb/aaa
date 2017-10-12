@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="my-4">Filter by Category
+    <small>Art</small>
+  </h1>
+
+  <div class="row" *ngFor="let product of products | filter : 'category' : product">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="thumbnail" *ngIf="product.category === 'Art'">
+        <img [src]="'http://localhost:3000' + product.image" class="image">
+        <div class="caption">
+          <h4>{{product.title}}</h4>
+            <span class="label label-default">{{ product.category }}</span>
+          <p class="space">
+            <a [routerLink]="['../','product', product._id]" class="btn btn-default" role="button">See details</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

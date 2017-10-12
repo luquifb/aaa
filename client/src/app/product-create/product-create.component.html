@@ -1,12 +1,12 @@
 <div class="container">
   <form class="form-horizontal jumbotron center" enctype="multipart/form-data">
-        <h3>Add new product</h3>
+        <h3>Add new artwork</h3>
         <div class="form-group">
             <label for="inputText">Title</label>
             <div>
               <input type="text" class="form-control" [(ngModel)]="newProd.title" name="title" placeholder="Title">
             </div>
-          </div>        
+          </div>
         <div class="form-group">
         <label for="inputArtist">Artist</label>
         <div>
@@ -18,7 +18,7 @@
           <div>
             <input type="number" class="form-control" [(ngModel)]="newProd.price" name="price" placeholder="Price">
           </div>
-      </div> 
+      </div>
       <div class="form-group">
           <label for="textArea">Description</label>
           <div>
@@ -32,10 +32,8 @@
           <select class="form-control" id="select-category" [(ngModel)]="newProd.category" name="category">
             <option>Art</option>
             <option>Photography</option>
-            <option>Design</option>
             <option>Painting</option>
-            <option>Works on paper</option>
-            <option>Sculpture</option>
+            <option>Work on paper</option>
           </select>
         </div>
       </div>
@@ -43,14 +41,14 @@
       <div class="form-group">
           <label for="inputFile">Image</label>
           <div>
-            <input type="file" name="file" value="file" ng2FileSelect class="form-control" [uploader]="uploader" />              
+            <input type="file" name="file" value="file" ng2FileSelect class="form-control" [uploader]="uploader" />
           </div>
-      </div> 
+      </div>
 
       <div class="form-group">
         <div>
-          <button class="btn" (click)="addProduct()" class="btn btn-success">Add New Product</button>
-          <button type="reset" class="btn btn-default">Cancel</button>          
+          <button class="btn" (click)="addProduct()" class="btn btn-success">Add New Artwork</button>
+          <button type="reset" class="btn btn-default">Cancel</button>
         </div>
       </div>
   </form>

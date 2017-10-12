@@ -21,8 +21,10 @@
           <!-- <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
           sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">Bottom</button>            -->
           <a *ngIf="user.role==='Seller'" [routerLink]="['/product/edit', id]" class="btn btn-default">Edit Product</a>
-          <a (click)="deleteProduct()" class="btn btn-sm btn-danger" role="button">Delete</a>
         </p>
+        <div class="user-info">
+            <a (click)="deleteProduct()" class="btn btn-sm btn-danger" role="button">Delete</a>
+        </div>
     </div>
   </div>
 

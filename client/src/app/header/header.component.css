@@ -37,3 +37,8 @@ span {
 .divider-2 {
   vertical-align: middle;
 }
+
+.caret {
+  color: #999;
+  margin: 0 5px;
+}

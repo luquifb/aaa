@@ -1,0 +1,27 @@
+.my-4 {
+  margin: 30px;
+}
+
+.image {
+  width: 350px;
+  height: 200px;
+}
+
+img {
+  border-radius: 7px;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.container {
+  /*padding: 30px;
+  margin: 30px;*/
+  text-align: center;
+}
+
+.space {
+  margin: 20px;
+}
