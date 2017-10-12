@@ -112,6 +112,11 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_file_upload__ = __webpack_require__("../../../../ng2-file-upload/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27_ng2_file_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__artist_list_artist_list_component__ = __webpack_require__("../../../../../src/app/artist-list/artist-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__logout_logout_component__ = __webpack_require__("../../../../../src/app/logout/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__art_category_art_category_component__ = __webpack_require__("../../../../../src/app/art-category/art-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__photography_category_photography_category_component__ = __webpack_require__("../../../../../src/app/photography-category/photography-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__painting_category_painting_category_component__ = __webpack_require__("../../../../../src/app/painting-category/painting-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__work_on_paper_category_work_on_paper_category_component__ = __webpack_require__("../../../../../src/app/work-on-paper-category/work-on-paper-category.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -119,6 +124,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
 
 
 
@@ -173,7 +183,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_23__categories_categories_component__["a" /* CategoriesComponent */],
             __WEBPACK_IMPORTED_MODULE_24__review_review_component__["a" /* ReviewComponent */],
             __WEBPACK_IMPORTED_MODULE_27_ng2_file_upload__["FileSelectDirective"],
-            __WEBPACK_IMPORTED_MODULE_28__artist_list_artist_list_component__["a" /* ArtistListComponent */]
+            __WEBPACK_IMPORTED_MODULE_28__artist_list_artist_list_component__["a" /* ArtistListComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__logout_logout_component__["a" /* LogoutComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__art_category_art_category_component__["a" /* ArtCategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__photography_category_photography_category_component__["a" /* PhotographyCategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__painting_category_painting_category_component__["a" /* PaintingCategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__work_on_paper_category_work_on_paper_category_component__["a" /* WorkOnPaperCategoryComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -187,6 +202,74 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/art-category/art-category.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".my-4 {\n  margin: 30px;\n}\n\n.image {\n  width: 350px;\n  height: 200px;\n}\n\nimg {\n  border-radius: 7px;\n}\n\np {\n  text-align: center;\n  font-size: 18px;\n}\n\n.container {\n  /*padding: 30px;\n  margin: 30px;*/\n  text-align: center;\n}\n\n.space {\n  margin: 20px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/art-category/art-category.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h1 class=\"my-4\">Filter by Category\n    <small>Art</small>\n  </h1>\n\n  <div class=\"row\" *ngFor=\"let product of products | filter : 'category' : product\">\n    <div class=\"col-lg-4 col-md-6 mb-4\">\n      <div class=\"thumbnail\" *ngIf=\"product.category === 'Art'\">\n        <img [src]=\"'http://localhost:3000' + product.image\" class=\"image\">\n        <div class=\"caption\">\n          <h4>{{product.title}}</h4>\n            <span class=\"label label-default\">{{ product.category }}</span>\n          <p class=\"space\">\n            <a [routerLink]=\"['../','product', product._id]\" class=\"btn btn-default\" role=\"button\">See details</a>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/art-category/art-category.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArtCategoryComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ArtCategoryComponent = (function () {
+    function ArtCategoryComponent(prodService) {
+        this.prodService = prodService;
+    }
+    ArtCategoryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.prodService.getProducts()
+            .subscribe(function (allProducts) { return _this.products = allProducts; });
+    };
+    return ArtCategoryComponent;
+}());
+ArtCategoryComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-art-category',
+        template: __webpack_require__("../../../../../src/app/art-category/art-category.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/art-category/art-category.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object])
+], ArtCategoryComponent);
+
+var _a;
+//# sourceMappingURL=art-category.component.js.map
 
 /***/ }),
 
@@ -333,7 +416,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card {\n  magin: 20px;\n  padding: 20px;\n}\n\n.card-img {\n  width: 710px;\n  height: 300px;\n  }\n\n.thumbnail {\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, ".card {\n  magin: 30px;\n  padding: 30px;\n}\n\n.card-img {\n  width: 690px;\n  height: 300px;\n}\n\nimg {\n  border-radius: 7px;\n}\n\n.thumbnail {\n  padding: 20px;\n}\n\n.btn {\n  margin: 30px;\n  color: #555;\n}\n\n.my-4 {\n  text-align: center;\n  margin-bottom: 35px;\n}\n\n.h1{\n  text-transform: uppercase;\n}\n\na {\n  text-decoration: none;\n  color: #FFF;\n}\n\n.thumbnail-2 {\n  border-radius: 5px 5px 7px 7px;\n}\n\n.cat-1 {\n  background-image: url('/assets/arte.png');\n}\n\n.cat-2 {\n  background-image: url('/assets/painting2.png')\n}\n\n.cat-3 {\n  background-image: url('/assets/photography.png')\n}\n\n.cat-4 {\n  background-image: url('/assets/paper.png')\n}\n\n.title {\n  color: #FFF;\n}\n", ""]);
 
 // exports
 
@@ -346,7 +429,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/categories/categories.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "    <div class=\"container\">\n      <div class=\"row\">\n\n        <div class=\"col-md-2\"></div>\n\n        <div class=\"col-md-8\">\n          <h1 class=\"my-4\">Categories\n            <small>AAA</small>\n          </h1>\n\n          <div class=\"card\" *ngFor=\"let product of products\">\n            <img class=\"card-img\" src=\"http://placehold.it/750x300\" alt=\"\">\n            <div class=\"thumbnail\">\n              <h2>{{product.category}}</h2>\n              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>\n              <a href=\"#\" class=\"btn btn-default\">Enter &rarr;</a>\n            </div>\n          </div>\n\n        </div>\n\n        <div class=\"col-md-2\"></div>\n\n      </div>\n    </div>\n"
+module.exports = "\n    <div class=\"container\">\n      <div class=\"row\">\n\n        <div class=\"col-md-2\"></div>\n\n        <div class=\"col-md-8\">\n          <h1 class=\"my-4\">All Categories</h1>\n\n          <div class=\"jumbotron cat-1 thumbnail-2\">\n            <h1 class=\"title\">Art</h1>\n            <p><a [routerLink]=\"['/categories/art']\" class=\"btn btn-default\">Show me more &rarr;</a></p>\n          </div>\n\n          <div class=\"jumbotron cat-2 thumbnail-2\">\n            <h1 class=\"title\">Painting</h1>\n            <p><a [routerLink]=\"['/categories/painting']\" class=\"btn btn-default\">Show me more &rarr;</a></p>\n          </div>\n\n          <div class=\"jumbotron cat-3 thumbnail-2\">\n            <h1 class=\"title\">Photography</h1>\n            <p><a [routerLink]=\"['/categories/photography']\" class=\"btn btn-default\">Show me more &rarr;</a></p>\n          </div>\n\n          <div class=\"jumbotron cat-4 thumbnail-2\">\n            <h1 class=\"title\">Work on Paper</h1>\n            <p><a [routerLink]=\"['/categories/work-on-paper']\" class=\"btn btn-default\">Show me more &rarr;</a></p>\n          </div>\n          <!-- <div class=\"card\">\n            <img class=\"card-img\" src=\"./assets/art.png\">\n            <div class=\"thumbnail-2\">\n              <h2>Art</h2>\n              <a [routerLink]=\"['/categories/art']\" class=\"btn btn-default\">Show me more &rarr;</a>\n            </div>\n          </div>\n\n          <div class=\"card\">\n            <img class=\"card-img\" src=\"./assets/painting.png\">\n            <div class=\"thumbnail-2\">\n              <h2>Painting</h2>\n              <a [routerLink]=\"['/categories/painting']\" class=\"btn btn-default\">Show me more &rarr;</a>\n            </div>\n          </div>\n\n          <div class=\"card\">\n            <div class=\"thumbnail-2\">\n              <img class=\"card-img\" src=\"./assets/photography.png\">\n              <h2>Photography</h2>\n              <a [routerLink]=\"['/categories/photography']\" class=\"btn btn-default\">Show me more &rarr;</a>\n            </div>\n          </div> -->\n\n        </div>\n\n        <div class=\"col-md-2\"></div>\n\n      </div>\n    </div>\n\n\n\n\n\n    <!-- <h2><span class=\"label label-default\"><a [routerLink]=\"['/categories']\">{{ product.category }}</a></span></h2> -->\n\n\n    <!-- <div class=\"btn-group btn\">\n      <a class=\"btn btn-default\"  *ngFor=\"let product of products\">{{product.category}}</a>\n    </div> -->\n\n    <!-- <a class=\"btn btn-default btn-lg btn-block\" *ngFor=\"let product of products\">{{product.category}}</a> -->\n"
 
 /***/ }),
 
@@ -464,7 +547,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".center {\n    text-align: center;\n}\n\nform {\n    border-radius: 7px;\n    padding: 10px;\n}\n\n.account {\n    display: inline-block;\n}\n\n.form-group {\n    text-align: center;\n}\n\n.jumbotron {\n    width: 50%;\n    height: 50%;\n    margin-left: 300px;\n}\n", ""]);
 
 // exports
 
@@ -477,7 +560,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/edit-user-profile/edit-user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<form >\n  <h2> Edit User profile </h2>\n  <label> Username </label>\n  <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\"/>\n    <br>\n  <label> Password </label>\n  <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\"/>\n    <br>\n  <button (click)=\"editProfile()\" class=\"btn btn-success\"> Save Changes </button>\n\n</form>\n"
+module.exports = "<div class=\"container\">\n  <form class=\"form-horizontal jumbotron center\">\n    <h2> Edit User profile </h2>\n        <div class=\"form-group\">\n            <label for=\"inputUsername\" >Username</label>\n          <div>\n            <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" class=\"form-control\" placeholder=\"Username\">\n          </div>\n        </div>\n      <div class=\"form-group\">\n        <label for=\"inputPassword\" >Password</label>\n        <div>\n          <input type=\"password\" [(ngModel)]=\"formInfo.password\" class=\"form-control\" name=\"password\" placeholder=\"Password\">\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <div class=\"account\">\n          <button (click)=\"editProfile()\" class=\"btn btn-success\"> Save Changes </button>\n        </div>\n      </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -559,7 +642,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"page-footer blue center-on-small-only\">\n        \n    <!--Footer Links-->\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <div class=\"col-md-4\">\n                <h5 class=\"title\">About All About Art</h5>\n                <p>Platform where everybody could be an art lover.</p>\n            </div>\n\n            <div class=\"col-md-4\">\n                <h5 class=\"title\">Site Map</h5>\n              <ul>\n                <li><a [routerLink]=\"['/product-list']\">All products</a><li>\n      \t\t\t<li><a [routerLink]=\"['/categories']\">Categories</a><li>\n      \t\t\t<li><a href=\"#\">Artists</a><li>\n              </ul>\n            </div>\n\n            <div class=\"col-md-4\">\n                <h5 class=\"title\"><i class=\"material-icons\">email</i></h5>\n                \n                <p><a href=\"mailto:lfbodereau@gmail.com\">hello@aaa.com</a></p>\n            </div>\n        </div>\n    </div>\n\n    <hr>\n\n    <div class=\"footer-copyright\">\n        <div class=\"container-fluid col-md-6 left\">\n            <img src=\"./assets/logo-aaart2.png\" class=\"navbar-brand logo\" [routerLink]=\"['/']\" />                \n            <p class=\"left margin\">All About Art © 2017</p>\n        </div>\n        <div class=\"col-md-6 right\">\n              <ul>\n                <li><a href=\"#\"><i class=\"fa fa-facebook fa-lg\"></i></a><li>\n      \t\t\t<li><a href=\"#\"><i class=\"fa fa-twitter fa-lg\"></i></a><li>\n      \t\t\t<li><a href=\"#\"><i class=\"fa fa-linkedin fa-lg\"></i></a><li>\n              </ul>\n        </div>\n    </div>\n\n</footer>\n"
+module.exports = "<footer class=\"page-footer blue center-on-small-only\">\n\n    <!--Footer Links-->\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <div class=\"col-md-4\">\n                <h5 class=\"title\">About AAA</h5>\n                <p>All About Art is a platform where everybody could find artworks and get in contact with their artists.</p>\n            </div>\n\n            <div class=\"col-md-4\">\n                <h5 class=\"title\">Site Map</h5>\n              <ul>\n                <li><a [routerLink]=\"['/product-list']\">All products</a><li>\n      \t\t\t    <li><a [routerLink]=\"['/categories']\">Categories</a><li>\n      \t\t\t    <li><a [routerLink]=\"['/artist-list']\">Artists</a><li>\n              </ul>\n            </div>\n\n            <div class=\"col-md-4\">\n                <h5 class=\"title\"><i class=\"material-icons\">email</i></h5>\n\n                <p><a href=\"mailto:lfbodereau@gmail.com\">hello@aaa.com</a></p>\n            </div>\n        </div>\n    </div>\n\n    <hr>\n\n    <div class=\"footer-copyright\">\n        <div class=\"container-fluid col-md-6 left\">\n            <img src=\"./assets/logo-aaart2.png\" class=\"navbar-brand logo\" [routerLink]=\"['/']\" />\n            <p class=\"left margin\">All About Art © 2017</p>\n        </div>\n        <div class=\"col-md-6 right\">\n              <ul>\n                <li><a href=\"#\"><i class=\"fa fa-facebook fa-lg\"></i></a><li>\n      \t\t\t<li><a href=\"#\"><i class=\"fa fa-twitter fa-lg\"></i></a><li>\n      \t\t\t<li><a href=\"#\"><i class=\"fa fa-linkedin fa-lg\"></i></a><li>\n              </ul>\n        </div>\n    </div>\n\n</footer>\n"
 
 /***/ }),
 
@@ -607,7 +690,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*.navbar {\n  background-color: red;\n  margin: 0;\n  padding: 20px;\n}\n\na {\n  margin: 20px;\n  font-size: 20px;\n  color: #FFF;\n  text-decoration: none;\n}\n\n.searcher {\n  width: 200px;\n  height: 20px;\n}*/\n\nspan {\n  color: #FFF;\n}\n\n.logo {\n  margin-right: 20px;\n}\n\n.navbar-brand {\n  height: 60%;\n  width: 60%;\n}", ""]);
+exports.push([module.i, "/*.navbar {\n  background-color: red;\n  margin: 0;\n  padding: 20px;\n}\n\na {\n  margin: 20px;\n  font-size: 20px;\n  color: #FFF;\n  text-decoration: none;\n}\n\n.searcher {\n  width: 200px;\n  height: 20px;\n}*/\n\nspan {\n  color: #FFF;\n}\n\n.logo {\n  margin-right: 20px;\n}\n\n.navbar-brand {\n  height: 60%;\n  width: 60%;\n}\n\n.username {\n  text-transform: uppercase;\n  vertical-align: middle;\n}\n\n.divider-2 {\n  vertical-align: middle;\n}\n\n.caret {\n  color: #999;\n  margin: 0 5px;\n}\n", ""]);
 
 // exports
 
@@ -620,7 +703,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-2\" aria-expanded=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <!-- <a class=\"navbar-brand logo\" [routerLink]=\"['/']\">AAA</a> -->\n      <img src=\"./assets/logo-aaart2.png\" class=\"navbar-brand logo\" [routerLink]=\"['/']\" />\n    </div>\n\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-2\" aria-expanded=\"true\"  *ngIf=\"!isLoggedIn\">\n        <ul class=\"nav navbar-nav navbar-right\">\n          <li><a [routerLink]=\"['/']\">Home</a></li>\n          <li><a [routerLink]=\"['/product-list']\">Products</a></li>\n          <li><a [routerLink]=\"['/categories']\">Categories</a></li>\n          <li><a [routerLink]=\"['/artist-list']\">Artists</a></li>          \n          <li class=\"dropdown\">\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"true\">Profile <span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\" role=\"menu\">\n              <li><a [routerLink]=\"['/user']\">My Profile</a></li>\n              <li class=\"divider\"></li>\n              <li><a >Edit profile</a></li>\n              <li class=\"divider\"></li>\n              <li><a (click)=\"auth.logout().subscribe()\">Logout</a></li>\n            </ul>\n          </li>\n          <li><a [routerLink]=\"['/login']\">Login</a></li>\n          <li><a [routerLink]=\"['/signup']\">Sign up</a></li>\n          <li><a [routerLink]=\"['/cart']\"><i class=\"material-icons\">shopping_cart</i></a></li>\n        </ul>\n\n    </div>\n\n  </div>\n</nav>\n"
+module.exports = "\n<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-2\" aria-expanded=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <!-- <a class=\"navbar-brand logo\" [routerLink]=\"['/']\">AAA</a> -->\n      <img src=\"./assets/logo-aaart2.png\" class=\"navbar-brand logo\" [routerLink]=\"['/']\" />\n    </div>\n\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-2\" aria-expanded=\"true\"  *ngIf=\"!isLoggedIn\">\n        <ul class=\"nav navbar-nav navbar-right\">\n\n          <li><a [routerLink]=\"['/']\">Home</a></li>\n\n          <li class=\"dropdown\">\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"true\">Artworks<span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\" role=\"menu\">\n              <li><a [routerLink]=\"['/product-list']\">All</a></li>\n              <li class=\"divider\"></li>\n              <li><a [routerLink]=\"['../','product-create']\">Upload Artwork</a></li>\n            </ul>\n          </li>\n\n          <li class=\"dropdown\">\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"true\">Categories<span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\" role=\"menu\">\n              <li><a [routerLink]=\"['/categories']\">All</a></li>\n              <li class=\"divider\"></li>\n              <li><a [routerLink]=\"['/categories/art']\">Art</a></li>\n              <li class=\"divider\"></li>\n              <li><a [routerLink]=\"['/categories/photography']\">Photography</a></li>\n              <li class=\"divider\"></li>\n              <li><a [routerLink]=\"['/categories/painting']\">Painting</a></li>\n              <li class=\"divider\"></li>\n              <li><a [routerLink]=\"['/categories/work-on-paper']\">Work on Paper</a></li>\n            </ul>\n          </li>\n\n          <li><a [routerLink]=\"['/artist-list']\">Artists</a></li>\n\n          <li class=\"divider-2\"><a>|</a></li>\n\n          <li class=\"dropdown\">\n            <a class=\"dropdown-toggle username\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"true\">{{ user.username }}</a>\n            <ul class=\"dropdown-menu\" role=\"menu\">\n              <li><a [routerLink]=\"['/user']\">My Profile</a></li>\n              <li class=\"divider\"></li>\n              <li><a [routerLink]=\"['/user/edit-profile', user._id]\">Edit profile</a></li>\n              <li class=\"divider\"></li>\n              <li><a (click)=\"auth.logout().subscribe()\">Logout</a></li>\n            </ul>\n          </li>\n<!--\n          <li>\n            <a [routerLink]=\"['/user']\">\n              <i class=\"material-icons\">fingerprint</i>\n            </a>\n          </li> -->\n\n          <li class=\"dropdown\">\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"true\"><i class=\"material-icons\">fingerprint</i></a>\n            <ul class=\"dropdown-menu\" role=\"menu\">\n              <li><a [routerLink]=\"['/login']\">Login</a></li>\n            </ul>\n          </li>\n\n          <li class=\"divider-2\"><a>|</a></li>\n\n          <li class=\"dropdown\">\n            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"true\">Not user?</a>\n            <ul class=\"dropdown-menu\" role=\"menu\">\n              <li><a [routerLink]=\"['/signup']\">Sign up</a></li>\n            </ul>\n          </li>\n\n        </ul>\n\n    </div>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -646,8 +729,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var HeaderComponent = (function () {
     function HeaderComponent(auth, router) {
+        var _this = this;
         this.auth = auth;
         this.router = router;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
     }
     HeaderComponent.prototype.ngOnInit = function () {
     };
@@ -675,7 +762,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h2 {\n  text-align: center;\n  padding: 30px;\n}\n\n.slider {\n  height: 500px;\n  width: 800px;\n}\n\n.btn {\n  margin: 10px;\n}\n\n.cta {\n  margin: 80px;\n}\n\n.card-img-top {\n  width: 250px;\n  height: 150px;\n  border-radius: 7px;\n}\n\n.jumbotron {\n  /* background-image: url(\"https://learnodo-newtonic.com/wp-content/uploads/2017/02/Metamorphosis-of-Narcissus-1937-Salvador-Dali.jpg\"); */\n}\n\n.display-3, .lead {\n  color: #FFF;\n}\n\n.card-text {\n  color: #555;\n}\n\n.grey {\n  background-color:#999;\n  display: relative;\n  margin: 50px;\n}", ""]);
+exports.push([module.i, "h2 {\n  text-align: center;\n  padding: 30px;\n}\n\n.slider {\n  height: 500px;\n  width: 800px;\n}\n\n.btn {\n  margin: 10px;\n}\n\n.cta {\n  margin: 80px;\n}\n\n.card-img-top {\n  width: 255px;\n  height: 150px;\n  border-radius: 7px;\n}\n\n.jumbotron {\n  background-image: url(\"http://gabyherbstein.com/files/fotos/894.jpg\");\n   /*background-image: url(\"https://learnodo-newtonic.com/wp-content/uploads/2017/02/Metamorphosis-of-Narcissus-1937-Salvador-Dali.jpg\"); */\n}\n\n.display-3, .lead {\n  color: #FFF;\n}\n\n.card-text {\n  color: #555;\n}\n\n.grey {\n  background-color:#999;\n  display: relative;\n  margin: 50px;\n}\n\n.heading {\n  margin: 30px;\n  color: #FFF;\n}\n\n.card-title {\n  margin: 20px;\n}\n", ""]);
 
 // exports
 
@@ -688,7 +775,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <header class=\"jumbotron my-4\">\n    <h1 class=\"display-3\">AAA: All About Art!</h1>\n    <p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>\n    <a [routerLink]=\"['/product-list']\" class=\"btn btn-default btn-lg\">See list of products</a>\n  </header>\n\n\n  <h2>Trending <i class=\"material-icons\">dashboard</i></h2>\n\n  <div class=\"row text-center\">\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"http://placehold.it/500x325\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Product 1</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Product</a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"http://placehold.it/500x325\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Product 2</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Product</a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"http://placehold.it/500x325\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Product 3</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Product</a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"http://placehold.it/500x325\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Product 4</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Product</a>\n        </div>\n      </div>\n    </div>\n\n  </div>\n\n    <hr>\n\n  <div class=\"row text-center cta\">\n    <div class=\"col-md-8\">\n      <h4>Discover worldwide art</h4>\n      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>\n    </div>\n    <div class=\"col-md-4\">\n      <a class=\"btn btn-default btn-lg btn-block\" [routerLink]=\"['/categories']\">Show me more</a>\n    </div>\n  </div>\n\n    <hr>\n\n  <!-- <div class=\"row grey\">\n    <div class=\"col-lg-12\">\n      <p>fnbib</p>\n    </div>\n  </div> -->\n\n</div>\n"
+module.exports = "\n<div class=\"container\">\n  <header class=\"jumbotron my-4\">\n    <h1 class=\"display-3\">ALL ABOUT ART</h1>\n    <h4 class=\"heading\">Let's AAA inspire you and enjoy the art you are looking for!</h4>\n    <a [routerLink]=\"['/product-list']\" class=\"btn btn-default btn-lg\">See all artworks</a>\n  </header>\n\n\n  <h2>Trending <i class=\"material-icons\">dashboard</i></h2>\n\n  <div class=\"row text-center\">\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"./assets/art1.png\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Fils Fine Art</h4>\n          <p class=\"card-text\">Christian Megert - Farbduett mit Spiegel</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Details</a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"./assets/art2.png\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Wallspace</h4>\n          <p class=\"card-text\">\"Central Avenue\" Kymm Swank Solo Show</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Details</a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"./assets/art3.png\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">After Bansky</h4>\n          <p class=\"card-text\">Screenprint in colours on wove paper</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Details</a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"col-lg-3 col-md-6 mb-4\">\n      <div class=\"thumbnail\">\n        <img class=\"card-img-top\" src=\"./assets/art4.png\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Eduardo Hoffmann</h4>\n          <p class=\"card-text\">Mixed technique on canvas</p>\n        </div>\n        <div class=\"card-footer\">\n          <a href=\"#\" class=\"btn btn-default\">See Details</a>\n        </div>\n      </div>\n    </div>\n\n  </div>\n\n    <hr>\n\n  <div class=\"row text-center cta\">\n    <div class=\"col-md-8\">\n      <h4>Discover worldwide art</h4>\n      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>\n    </div>\n    <div class=\"col-md-4\">\n      <a class=\"btn btn-default btn-lg btn-block\" [routerLink]=\"['/categories']\">Show me more</a>\n    </div>\n  </div>\n\n    <hr>\n\n  <blockquote class=\"blockquote\">\n      <p>Painting is a language of its own. You cannot interpret one form of expression with another form of expression.</p>\n      <small>Marcel Duchamp</small>\n  </blockquote>\n\n  <!-- <div class=\"row grey\">\n    <div class=\"col-lg-12\">\n      <p>fnbib</p>\n    </div>\n  </div> -->\n\n</div>\n"
 
 /***/ }),
 
@@ -812,6 +899,203 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/logout/logout.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/logout/logout.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n\n  <div class=\"alert alert-dismissible alert-success\">\n      <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\n      Hope to <strong>see you</strong> back soon!\n  </div>\n\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/logout/logout.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LogoutComponent = (function () {
+    function LogoutComponent() {
+    }
+    LogoutComponent.prototype.ngOnInit = function () {
+    };
+    return LogoutComponent;
+}());
+LogoutComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-logout',
+        template: __webpack_require__("../../../../../src/app/logout/logout.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/logout/logout.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], LogoutComponent);
+
+//# sourceMappingURL=logout.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/painting-category/painting-category.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".my-4 {\n  margin: 30px;\n}\n\n.image {\n  width: 350px;\n  height: 200px;\n}\n\nimg {\n  border-radius: 7px;\n}\n\np {\n  text-align: center;\n  font-size: 18px;\n}\n\n.container {\n  /*padding: 30px;\n  margin: 30px;*/\n  text-align: center;\n}\n\n.space {\n  margin: 20px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/painting-category/painting-category.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h1 class=\"my-4\">Filter by Category\n    <small>Painting</small>\n  </h1>\n\n  <div class=\"row\" *ngFor=\"let product of products | filter : 'category' : product\">\n    <div class=\"col-lg-4 col-md-6 mb-4\">\n      <div class=\"thumbnail\" *ngIf=\"product.category === 'Painting'\">\n        <img [src]=\"'http://localhost:3000' + product.image\" class=\"image\">\n        <div class=\"caption\">\n          <h4>{{product.title}}</h4>\n            <span class=\"label label-default\">{{ product.category }}</span>\n          <p class=\"space\">\n            <a [routerLink]=\"['../','product', product._id]\" class=\"btn btn-default\" role=\"button\">See details</a>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/painting-category/painting-category.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaintingCategoryComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PaintingCategoryComponent = (function () {
+    function PaintingCategoryComponent(prodService) {
+        this.prodService = prodService;
+    }
+    PaintingCategoryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.prodService.getProducts()
+            .subscribe(function (allProducts) { return _this.products = allProducts; });
+    };
+    return PaintingCategoryComponent;
+}());
+PaintingCategoryComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-painting-category',
+        template: __webpack_require__("../../../../../src/app/painting-category/painting-category.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/painting-category/painting-category.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object])
+], PaintingCategoryComponent);
+
+var _a;
+//# sourceMappingURL=painting-category.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/photography-category/photography-category.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".my-4 {\n  margin: 30px;\n}\n\n.image {\n  width: 350px;\n  height: 200px;\n}\n\nimg {\n  border-radius: 7px;\n}\n\np {\n  text-align: center;\n  font-size: 18px;\n}\n\n.container {\n  /*padding: 30px;\n  margin: 30px;*/\n  text-align: center;\n}\n\n.space {\n  margin: 20px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/photography-category/photography-category.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h1 class=\"my-4\">Filter by Category\n    <small>Photography</small>\n  </h1>\n\n  <div class=\"row\" *ngFor=\"let product of products | filter : 'category' : product\">\n    <div class=\"col-lg-4 col-md-6 mb-4\">\n      <div class=\"thumbnail\" *ngIf=\"product.category === 'Photography'\">\n        <img [src]=\"'http://localhost:3000' + product.image\" class=\"image\">\n        <div class=\"caption\">\n          <h4>{{product.title}}</h4>\n            <span class=\"label label-default\">{{ product.category }}</span>\n          <p class=\"space\">\n            <a [routerLink]=\"['../','product', product._id]\" class=\"btn btn-default\" role=\"button\">See details</a>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/photography-category/photography-category.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhotographyCategoryComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PhotographyCategoryComponent = (function () {
+    function PhotographyCategoryComponent(prodService) {
+        this.prodService = prodService;
+    }
+    PhotographyCategoryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.prodService.getProducts()
+            .subscribe(function (allProducts) { return _this.products = allProducts; });
+    };
+    return PhotographyCategoryComponent;
+}());
+PhotographyCategoryComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-photography-category',
+        template: __webpack_require__("../../../../../src/app/photography-category/photography-category.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/photography-category/photography-category.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object])
+], PhotographyCategoryComponent);
+
+var _a;
+//# sourceMappingURL=photography-category.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/pipes/filter.pipe.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -869,7 +1153,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product-create/product-create.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <form class=\"form-horizontal jumbotron center\" enctype=\"multipart/form-data\">\n        <h3>Add new product</h3>\n        <div class=\"form-group\">\n            <label for=\"inputText\">Title</label>\n            <div>\n              <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newProd.title\" name=\"title\" placeholder=\"Title\">\n            </div>\n          </div>        \n        <div class=\"form-group\">\n        <label for=\"inputArtist\">Artist</label>\n        <div>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newProd.artist\" name=\"artist\" placeholder=\"Artist\">\n        </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"inputText\">Price</label>\n          <div>\n            <input type=\"number\" class=\"form-control\" [(ngModel)]=\"newProd.price\" name=\"price\" placeholder=\"Price\">\n          </div>\n      </div> \n      <div class=\"form-group\">\n          <label for=\"textArea\">Description</label>\n          <div>\n            <textarea class=\"form-control\" rows=\"3\" [(ngModel)]=\"newProd.description\" name=\"description\"></textarea>\n            <span class=\"help-block\">Add your artwork description here.</span>\n          </div>\n        </div>\n      <div class=\"form-group\">\n        <label for=\"select-category\">Category</label>\n        <div>\n          <select class=\"form-control\" id=\"select-category\" [(ngModel)]=\"newProd.category\" name=\"category\">\n            <option>Art</option>\n            <option>Photography</option>\n            <option>Design</option>\n            <option>Contemporary Art</option>\n          </select>\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n          <label for=\"inputFile\">Image</label>\n          <div>\n            <input type=\"file\" name=\"file\" value=\"file\" ng2FileSelect class=\"form-control\" [uploader]=\"uploader\" />              \n          </div>\n      </div> \n\n      <div class=\"form-group\">\n        <div>\n          <button class=\"btn\" (click)=\"addProduct()\" class=\"btn btn-success\">Add New Product</button>\n          <button type=\"reset\" class=\"btn btn-default\">Cancel</button>          \n        </div>\n      </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <form class=\"form-horizontal jumbotron center\" enctype=\"multipart/form-data\">\n        <h3>Add new artwork</h3>\n        <div class=\"form-group\">\n            <label for=\"inputText\">Title</label>\n            <div>\n              <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newProd.title\" name=\"title\" placeholder=\"Title\">\n            </div>\n          </div>\n        <div class=\"form-group\">\n        <label for=\"inputArtist\">Artist</label>\n        <div>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"newProd.artist\" name=\"artist\" placeholder=\"Artist\">\n        </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"inputText\">Price</label>\n          <div>\n            <input type=\"number\" class=\"form-control\" [(ngModel)]=\"newProd.price\" name=\"price\" placeholder=\"Price\">\n          </div>\n      </div>\n      <div class=\"form-group\">\n          <label for=\"textArea\">Description</label>\n          <div>\n            <textarea class=\"form-control\" rows=\"3\" [(ngModel)]=\"newProd.description\" name=\"description\"></textarea>\n            <span class=\"help-block\">Add your artwork description here.</span>\n          </div>\n        </div>\n      <div class=\"form-group\">\n        <label for=\"select-category\">Category</label>\n        <div>\n          <select class=\"form-control\" id=\"select-category\" [(ngModel)]=\"newProd.category\" name=\"category\">\n            <option>Art</option>\n            <option>Photography</option>\n            <option>Painting</option>\n            <option>Work on paper</option>\n          </select>\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n          <label for=\"inputFile\">Image</label>\n          <div>\n            <input type=\"file\" name=\"file\" value=\"file\" ng2FileSelect class=\"form-control\" [uploader]=\"uploader\" />\n          </div>\n      </div>\n\n      <div class=\"form-group\">\n        <div>\n          <button class=\"btn\" (click)=\"addProduct()\" class=\"btn btn-success\">Add New Artwork</button>\n          <button type=\"reset\" class=\"btn btn-default\">Cancel</button>\n        </div>\n      </div>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -972,7 +1256,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.container {\n  /*padding: 30px;\n  margin: 30px;*/\n  text-align: center;\n}\n\n.image {\n  width: 200px;\n  height: 300px;\n}\n\np {\n  text-align: center;\n  font-size: 18px;\n}\n\n.detail-image {\n  width: 50px;\n  height: 50px;\n}\n\n.title {\n  text-align: left;\n}\n\n.img {\n  width: 600px;\n  height: 400px;\n}\n\n.img-fluid {\n  width: 250px;\n  height: 150px;\n}\n\nimg {\n  border-radius: 7px;\n}\n", ""]);
+exports.push([module.i, "\n.container {\n  /*padding: 30px;\n  margin: 30px;*/\n  text-align: center;\n}\n\n.image {\n  width: 200px;\n  height: 300px;\n}\n\np {\n  text-align: center;\n  font-size: 18px;\n}\n\n.detail-image {\n  width: 50px;\n  height: 50px;\n}\n\n.title {\n  text-align: left;\n}\n\n.img {\n  width: 600px;\n  height: 400px;\n}\n\n.img-fluid {\n  width: 250px;\n  height: 150px;\n}\n\nimg {\n  border-radius: 7px;\n}\n\n.title-2 {\n  margin: 60px;\n}\n\n.modal-body {\n  display: inline-block;\n}\n\n.modal-title {\n  color: #777;\n}\n", ""]);
 
 // exports
 
@@ -985,7 +1269,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product-detail/product-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\" *ngIf='productToShow'>\n\n  <h1 class=\"title\">{{ productToShow.title }}\n    <small>{{ productToShow.artist }}</small>\n  </h1>\n\n  <div class=\"row\">\n    <div class=\"col-md-8\">\n      <img [src]=\"'http://localhost:3000' + productToShow.image\" class=\"img\">\n    </div>\n\n    <div class=\"col-md-4\">\n      <h3>Product Description</h3>\n        <p>{{productToShow.description}}</p>\n      <h3>Price</h3>\n        <p>$ {{productToShow.price}}</p>\n\n        <p>\n          <a href=\"#buyModal\" data-toggle=\"modal\" class=\"btn btn-default\" role=\"button\">Buy</a>            \n          <a [routerLink]=\"['/product/edit', id]\" class=\"btn btn-default\">Edit Product</a>\n          <a (click)=\"deleteProduct()\" class=\"btn btn-sm btn-danger\" role=\"button\">Delete</a>\n        </p>\n    </div>\n  </div>\n\n  <div class=\"modal\" id=\"buyModal\">\n      <div class=\"modal-dialog\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n            <h4 class=\"modal-title\">Buy this piece of art</h4>\n          </div>\n          <div class=\"modal-body\">\n            <p>This cost ${{productToShow.price}}</p>\n          </div>\n          <div class=\"modal-footer\">\n            <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            <button type=\"button\" class=\"btn btn-success\"><i class=\"material-icons\">email</i></button>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\n  <h3 class=\"title\">Related Products</h3>\n\n  <div class=\"row\">\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n  </div>\n<!-- \n  <div>\n    <app-review></app-review>\n  </div> -->\n</div>\n\n\n\n  \n\n  <!-- <ul>\n    <li>{{ review.name }}: {{ review.description }}</li>\n  </ul> -->\n"
+module.exports = "\n<div class=\"container\" *ngIf='productToShow'>\n\n  <h1 class=\"title\">{{ productToShow.title }}\n    <small>{{ productToShow.artist }}</small>\n  </h1>\n\n  <div class=\"row\">\n    <div class=\"col-md-8\">\n      <img [src]=\"'http://localhost:3000' + productToShow.image\" class=\"img\">\n    </div>\n\n    <div class=\"col-md-4\">\n      <h3>About the Work</h3>\n        <p>{{productToShow.description}}</p>\n      <h3>Price</h3>\n        <p>$ {{productToShow.price}}</p>\n\n        <p>\n          <a href=\"#buyModal\" data-toggle=\"modal\" class=\"btn btn-default btn-lg\" role=\"button\">Contact Artist</a>\n          <!-- <button type=\"button\" class=\"btn btn-default\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"bottom\" data-content=\"Vivamus\n          sagittis lacus vel augue laoreet rutrum faucibus.\" data-original-title=\"\" title=\"\">Bottom</button>            -->\n          <a *ngIf=\"user.role==='Seller'\" [routerLink]=\"['/product/edit', id]\" class=\"btn btn-default\">Edit Product</a>\n        </p>\n        <div class=\"user-info\">\n            <a (click)=\"deleteProduct()\" class=\"btn btn-sm btn-danger\" role=\"button\">Delete</a>\n        </div>\n    </div>\n  </div>\n\n  <div class=\"modal\" id=\"buyModal\">\n    <div class=\"modal-dialog\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n          <h3 class=\"modal-title\">{{productToShow.artist}}</h3>\n        </div>\n        <div class=\"modal-body\">\n          <h5>Get in touch:</h5>\n          <p><em>artist@aaart.co</em></p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <h3 class=\"title-2\">Other Artworks:\n      <span class=\"label label-default\">{{ productToShow.category }}</span>\n  </h3>\n\n  <div class=\"row\">\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n\n    <div class=\"col-md-3 col-sm-6 mb-4\">\n      <a href=\"#\">\n        <img class=\"img-fluid\" src=\"http://placehold.it/500x300\" alt=\"\">\n      </a>\n    </div>\n  </div>\n<!--\n  <div>\n    <app-review></app-review>\n  </div> -->\n</div>\n\n\n\n\n\n  <!-- <ul>\n    <li>{{ review.name }}: {{ review.description }}</li>\n  </ul> -->\n"
 
 /***/ }),
 
@@ -1084,7 +1368,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/product-list/product-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h1 class=\"my-4\">Product List\n    <small><a [routerLink]=\"['/categories']\">All categories</a></small>\n  </h1>\n\n  <!-- <div class=\"dropdown\">\n      <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n        Categories\n        <span class=\"caret\"></span>\n      </button>\n      <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n        <li><a href=\"#\">Art</a></li>\n        <li><a href=\"#\">Contemporary Art</a></li>\n        <li><a href=\"#\">Design</a></li>\n      </ul>\n    </div> -->\n\n\n  <div class=\"searcher\">\n    <label for=\"products\"><i class=\"material-icons middle\">search</i></label>\n    <input [(ngModel)]=\"product\" placeholder=\"        Search..\" type=\"text\">\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-md-6 mb-4\" *ngFor=\"let product of products | filter : 'title' : product | filter: 'category' \">\n      <div class=\"thumbnail\">\n        <img [src]=\"'http://localhost:3000' + product.image\" class=\"image\">\n        <div class=\"caption\">\n          <h4>{{product.title}}</h4>\n            <span class=\"label label-default\">{{ product.category }}</span>          \n          <p>${{product.price}}</p>\n          <p><a [routerLink]=\"['../','product', product._id]\" class=\"btn btn-default\" role=\"button\">See details</a> <a (click)=\"getProductData(product)\" class=\"btn btn-default\" role=\"button\">Add to Cart</a></p>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"categories\">\n    <a [routerLink]=\"['../','product-create']\" class=\"btn btn-default\">Create Product</a>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <h1 class=\"my-4\">Product List\n    <small><a [routerLink]=\"['/categories']\">All categories</a></small>\n  </h1>\n\n  <div class=\"searcher\">\n    <label for=\"products\"><i class=\"material-icons middle\">search</i></label>\n    <input [(ngModel)]=\"product\" placeholder=\"        Search..\" type=\"text\">\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-md-6 mb-4\" *ngFor=\"let product of products | filter : 'title' : product\">\n      <div class=\"thumbnail\">\n        <img [src]=\"'http://localhost:3000' + product.image\" class=\"image\">\n        <div class=\"caption\">\n          <h4>{{product.title}}</h4>\n            <span class=\"label label-default\">{{ product.category }}</span>\n          <p>${{product.price}}</p>\n          <p>\n            <a [routerLink]=\"['../','product', product._id]\" class=\"btn btn-default\" role=\"button\">See details</a>\n            <a [routerLink]=\"['/artist-list']\" class=\"btn btn-default\" role=\"button\">Author</a>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n  <!-- <div class=\"categories\">\n    <a [routerLink]=\"['../','product-create']\" class=\"btn btn-default\">Upload Artwork</a>\n  </div> -->\n</div>\n"
 
 /***/ }),
 
@@ -1222,18 +1506,28 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__userprofile_userprofile_component__ = __webpack_require__("../../../../../src/app/userprofile/userprofile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loginform_loginform_component__ = __webpack_require__("../../../../../src/app/loginform/loginform.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signupform_signupform_component__ = __webpack_require__("../../../../../src/app/signupform/signupform.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product-list/product-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__product_detail_product_detail_component__ = __webpack_require__("../../../../../src/app/product-detail/product-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__product_create_product_create_component__ = __webpack_require__("../../../../../src/app/product-create/product-create.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__edit_user_profile_edit_user_profile_component__ = __webpack_require__("../../../../../src/app/edit-user-profile/edit-user-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/edit-product/edit-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cart_list_cart_list_component__ = __webpack_require__("../../../../../src/app/cart-list/cart-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__review_review_component__ = __webpack_require__("../../../../../src/app/review/review.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__artist_list_artist_list_component__ = __webpack_require__("../../../../../src/app/artist-list/artist-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_isLoggedIn_canactivate_service__ = __webpack_require__("../../../../../src/app/services/isLoggedIn.canactivate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logout_logout_component__ = __webpack_require__("../../../../../src/app/logout/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signupform_signupform_component__ = __webpack_require__("../../../../../src/app/signupform/signupform.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__product_list_product_list_component__ = __webpack_require__("../../../../../src/app/product-list/product-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__product_detail_product_detail_component__ = __webpack_require__("../../../../../src/app/product-detail/product-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__product_create_product_create_component__ = __webpack_require__("../../../../../src/app/product-create/product-create.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__edit_user_profile_edit_user_profile_component__ = __webpack_require__("../../../../../src/app/edit-user-profile/edit-user-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__edit_product_edit_product_component__ = __webpack_require__("../../../../../src/app/edit-product/edit-product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__cart_list_cart_list_component__ = __webpack_require__("../../../../../src/app/cart-list/cart-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__categories_categories_component__ = __webpack_require__("../../../../../src/app/categories/categories.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__art_category_art_category_component__ = __webpack_require__("../../../../../src/app/art-category/art-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__photography_category_photography_category_component__ = __webpack_require__("../../../../../src/app/photography-category/photography-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__painting_category_painting_category_component__ = __webpack_require__("../../../../../src/app/painting-category/painting-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__work_on_paper_category_work_on_paper_category_component__ = __webpack_require__("../../../../../src/app/work-on-paper-category/work-on-paper-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__review_review_component__ = __webpack_require__("../../../../../src/app/review/review.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__artist_list_artist_list_component__ = __webpack_require__("../../../../../src/app/artist-list/artist-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_isLoggedIn_canactivate_service__ = __webpack_require__("../../../../../src/app/services/isLoggedIn.canactivate.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
+
+
+
+
+
 
 
 
@@ -1250,19 +1544,24 @@ var _a, _b;
 
 var routes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_0__home_home_component__["a" /* HomeComponent */] },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_4__product_list_product_list_component__["a" /* ProductListComponent */] },
-    { path: 'user', component: __WEBPACK_IMPORTED_MODULE_1__userprofile_userprofile_component__["a" /* UserprofileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_isLoggedIn_canactivate_service__["a" /* IsLoggedInService */]] },
-    { path: 'user/edit-profile/:id', component: __WEBPACK_IMPORTED_MODULE_7__edit_user_profile_edit_user_profile_component__["a" /* EditUserProfileComponent */] },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_5__product_list_product_list_component__["a" /* ProductListComponent */] },
+    { path: 'user', component: __WEBPACK_IMPORTED_MODULE_1__userprofile_userprofile_component__["a" /* UserprofileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__services_isLoggedIn_canactivate_service__["a" /* IsLoggedInService */]] },
+    { path: 'user/edit-profile/:id', component: __WEBPACK_IMPORTED_MODULE_8__edit_user_profile_edit_user_profile_component__["a" /* EditUserProfileComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__loginform_loginform_component__["a" /* LoginformComponent */] },
-    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_3__signupform_signupform_component__["a" /* SignupformComponent */] },
-    { path: 'categories', component: __WEBPACK_IMPORTED_MODULE_10__categories_categories_component__["a" /* CategoriesComponent */] },
-    { path: 'product-list', component: __WEBPACK_IMPORTED_MODULE_4__product_list_product_list_component__["a" /* ProductListComponent */] },
-    { path: 'product/:id', component: __WEBPACK_IMPORTED_MODULE_5__product_detail_product_detail_component__["a" /* ProductDetailComponent */] },
-    { path: 'product/edit/:id', component: __WEBPACK_IMPORTED_MODULE_8__edit_product_edit_product_component__["a" /* EditProductComponent */] },
-    { path: 'product/review/:id', component: __WEBPACK_IMPORTED_MODULE_11__review_review_component__["a" /* ReviewComponent */] },
-    { path: 'product-create', component: __WEBPACK_IMPORTED_MODULE_6__product_create_product_create_component__["a" /* ProductCreateComponent */] },
-    { path: 'artist-list', component: __WEBPACK_IMPORTED_MODULE_12__artist_list_artist_list_component__["a" /* ArtistListComponent */] },
-    { path: 'cart', component: __WEBPACK_IMPORTED_MODULE_9__cart_list_cart_list_component__["a" /* CartListComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_3__logout_logout_component__["a" /* LogoutComponent */] },
+    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_4__signupform_signupform_component__["a" /* SignupformComponent */] },
+    { path: 'categories', component: __WEBPACK_IMPORTED_MODULE_11__categories_categories_component__["a" /* CategoriesComponent */] },
+    { path: 'categories/art', component: __WEBPACK_IMPORTED_MODULE_12__art_category_art_category_component__["a" /* ArtCategoryComponent */] },
+    { path: 'categories/photography', component: __WEBPACK_IMPORTED_MODULE_13__photography_category_photography_category_component__["a" /* PhotographyCategoryComponent */] },
+    { path: 'categories/painting', component: __WEBPACK_IMPORTED_MODULE_14__painting_category_painting_category_component__["a" /* PaintingCategoryComponent */] },
+    { path: 'categories/work-on-paper', component: __WEBPACK_IMPORTED_MODULE_15__work_on_paper_category_work_on_paper_category_component__["a" /* WorkOnPaperCategoryComponent */] },
+    { path: 'product-list', component: __WEBPACK_IMPORTED_MODULE_5__product_list_product_list_component__["a" /* ProductListComponent */] },
+    { path: 'product/:id', component: __WEBPACK_IMPORTED_MODULE_6__product_detail_product_detail_component__["a" /* ProductDetailComponent */] },
+    { path: 'product/edit/:id', component: __WEBPACK_IMPORTED_MODULE_9__edit_product_edit_product_component__["a" /* EditProductComponent */] },
+    { path: 'product/review/:id', component: __WEBPACK_IMPORTED_MODULE_16__review_review_component__["a" /* ReviewComponent */] },
+    { path: 'product-create', component: __WEBPACK_IMPORTED_MODULE_7__product_create_product_create_component__["a" /* ProductCreateComponent */] },
+    { path: 'artist-list', component: __WEBPACK_IMPORTED_MODULE_17__artist_list_artist_list_component__["a" /* ArtistListComponent */] },
+    { path: 'cart', component: __WEBPACK_IMPORTED_MODULE_10__cart_list_cart_list_component__["a" /* CartListComponent */] },
     { path: '**', redirectTo: '' }
 ];
 //# sourceMappingURL=routes.js.map
@@ -1660,7 +1959,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".avatar {\n  width: 300px;\n  height: 300px;\n  border-radius: 50%\n}\n\n.title {\n  text-align: left;\n}\n", ""]);
+exports.push([module.i, ".avatar {\n  width: 300px;\n  height: 300px;\n  border-radius: 50%;\n  /* border: 1px solid #999; */\n}\n\n.title {\n  text-align: left;\n}\n\n/*.container-2 {\n  display: inline-block;\n  margin: 15px;\n}\n\n.image {\n  width: 350px;\n  height: 200px;\n}\n\nimg {\n  border-radius: 7px;\n}\n\np {\n  text-align: center;\n  font-size: 18px;\n}\n\n.container {\n\n  text-align: center;\n}\n\n\n.searcher {\n  text-align: center;\n  margin: 20px;\n  font-size: 30px;\n}\n\n.list {\n  display: inline-block;\n}\n\n.categories {\n  text-align: center;\n  padding: 10px 0;\n}\n\nhr{\n  border:         none;\n  border-left:    1px solid #777;\n  height:         80vh;\n  width:          1px;\n}\n\n.middle {\n  vertical-align: middle;\n}\n\na {\n  color: #777;\n}*/\n\n.user-data {\n  font-size: 18px;\n  display: inline-block;\n}\n\n.user-info {\n  margin: 30px;\n}\n", ""]);
 
 // exports
 
@@ -1673,7 +1972,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userprofile/userprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" *ngIf='user'>\n    <div *ngIf=\"!user\">\n      <h3>You need to log in</h3>\n      <a [routerLink]=\"['/login']\" class=\"btn btn-default\">Login</a>\n    </div>\n\n  <div *ngIf=\"user\">\n    <h1 class=\"title\">Name:\n      <small>{{ user.username }}</small>\n    </h1>\n\n  <div class=\"row\">\n    <div class=\"col-md-8\">\n      <img src=\"{{user.pic_path}}\" class=\"avatar\" />\n    </div>\n\n    <div class=\"col-md-4\">\n\n        <div>\n          <h4>Username:</h4> <p>{{user.username}}</p>\n        </div>\n        <div>\n          <h4>Role:</h4> <p>{{ user.role }}</p>\n        </div>\n        <div>\n          <h4>E-mail:</h4> <p>{{ user.email }}</p>\n        </div>\n        <div>\n          <h4>Member since:</h4> <p>{{ user.created_at | date:'dd/MM/yyyy' }}</p>\n        </div>\n\n        <p>\n          <a [routerLink]=\"['/user/edit-profile', user._id]\" class=\"btn btn-default\">Edit Profile</a>\n          <button (click)=\"auth.logout().subscribe()\" class=\"btn btn-success\"> Logout </button>\n          <button (click)=\"delete()\" class=\"btn btn-danger\"> Delete my Profile </button>\n\n        </p>\n    </div>\n  </div>\n</div>\n</div>\n"
+module.exports = "<div class=\"container\" *ngIf='user'>\n    <div *ngIf=\"!user\">\n      <h3>You need to log in</h3>\n      <a [routerLink]=\"['/login']\" class=\"btn btn-default\">Login</a>\n    </div>\n\n  <div *ngIf=\"user\">\n    <h1 class=\"title\">Name:\n      <small>{{ user.username }}</small>\n    </h1>\n\n  <div class=\"row\">\n    <div class=\"col-md-8\">\n      <img src=\"{{user.pic_path}}\" class=\"avatar\" />\n    </div>\n\n      <div class=\"col-lg-4 col-md-6 mb-4\">\n        <div class=\"thumbnail\">\n          <div class=\"user-info\">\n            <h4>Username: <span class=\"user-data\">{{user.username}}</span></h4>\n          </div>\n          <div class=\"user-info\">\n            <h4>E-mail: <span class=\"user-data\">{{user.email}}</span></h4>\n          </div>\n          <div class=\"user-info\">\n            <h4>Member since: <span class=\"user-data\">{{ user.created_at | date:'dd/MM/yyyy' }}</span></h4>\n          </div>\n          <div class=\"user-info\">\n            <h4>Role: <span class=\"label label-default\">{{ user.role }}</span></h4>\n          </div>\n          <div class=\"user-info\">\n            <p>\n              You are tired of us?\n              <button (click)=\"delete()\" class=\"btn btn-danger btn-xs\"> Delete my Profile </button>\n            </p>\n          </div>\n        </div>\n      </div>\n  </div>\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -1721,6 +2020,74 @@ UserprofileComponent = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=userprofile.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/work-on-paper-category/work-on-paper-category.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".my-4 {\n  margin: 30px;\n}\n\n.image {\n  width: 350px;\n  height: 200px;\n}\n\nimg {\n  border-radius: 7px;\n}\n\np {\n  text-align: center;\n  font-size: 18px;\n}\n\n.container {\n  /*padding: 30px;\n  margin: 30px;*/\n  text-align: center;\n}\n\n.space {\n  margin: 20px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/work-on-paper-category/work-on-paper-category.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h1 class=\"my-4\">Filter by Category\n    <small>Work on Paper</small>\n  </h1>\n\n  <div class=\"row\" *ngFor=\"let product of products | filter : 'category' : product\">\n    <div class=\"col-lg-4 col-md-6 mb-4\">\n      <div class=\"thumbnail\" *ngIf=\"product.category === 'Work on paper'\">\n        <img [src]=\"'http://localhost:3000' + product.image\" class=\"image\">\n        <div class=\"caption\">\n          <h4>{{product.title}}</h4>\n            <span class=\"label label-default\">{{ product.category }}</span>\n          <p class=\"space\">\n            <a [routerLink]=\"['../','product', product._id]\" class=\"btn btn-default\" role=\"button\">See details</a>\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/work-on-paper-category/work-on-paper-category.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkOnPaperCategoryComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var WorkOnPaperCategoryComponent = (function () {
+    function WorkOnPaperCategoryComponent(prodService) {
+        this.prodService = prodService;
+    }
+    WorkOnPaperCategoryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.prodService.getProducts()
+            .subscribe(function (allProducts) { return _this.products = allProducts; });
+    };
+    return WorkOnPaperCategoryComponent;
+}());
+WorkOnPaperCategoryComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-work-on-paper-category',
+        template: __webpack_require__("../../../../../src/app/work-on-paper-category/work-on-paper-category.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/work-on-paper-category/work-on-paper-category.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === "function" && _a || Object])
+], WorkOnPaperCategoryComponent);
+
+var _a;
+//# sourceMappingURL=work-on-paper-category.component.js.map
 
 /***/ }),
 
