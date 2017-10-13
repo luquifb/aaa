@@ -8,8 +8,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!-- <a class="navbar-brand logo" [routerLink]="['/']">AAA</a> -->
-      <img src="./assets/logo-aaart2.png" class="navbar-brand logo" [routerLink]="['/']" />
+      <!-- <a class="navbar-brand visible-xs" [routerLink]="['/']">AAA</a> -->
+      <img src="./assets/logo-aaart2.png" class="navbar-brand logo hidden-xs" [routerLink]="['/']" />
+      <img src="./assets/logo-aaart2.png" class="navbar-brand2 logo visible-xs" [routerLink]="['/']" />
+      
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" aria-expanded="true"  *ngIf="!isLoggedIn">
@@ -43,7 +45,7 @@
 
           <li><a [routerLink]="['/artist-list']">Artists</a></li>
 
-          <li class="divider-2"><a>|</a></li>
+          <li class="divider-2 hidden-xs"><a>|</a></li>
           <li *ngIf="user" class="dropdown">
             <a class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-expanded="true">{{ user.username }}</a>
             <ul class="dropdown-menu" role="menu">
@@ -62,7 +64,7 @@
             </ul>
           </li>
 
-          <li class="divider-2"><a>|</a></li>
+          <li class="divider-2 hidden-xs"><a>|</a></li>
 
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Not user?</a>

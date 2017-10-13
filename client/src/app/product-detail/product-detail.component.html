@@ -7,7 +7,7 @@
 
   <div class="row">
     <div class="col-md-8">
-      <img [src]="productToShow.image" class="img">
+      <img [src]="productToShow.image" class="img img-fluid">
     </div>
 
     <div class="col-md-4">
@@ -20,7 +20,7 @@
           <a href="#buyModal" data-toggle="modal" class="btn btn-default btn-lg" role="button">Contact Artist</a>
           <!-- <a *ngIf="user.role==='Seller'" [routerLink]="['/product/edit', id]" class="btn btn-default">Edit Product</a> -->
         </p>
-        <div class="user-info">
+        <div class="user-info hidden-xs">
             <a (click)="deleteProduct()" class="btn btn-sm btn-danger" role="button">Delete</a>
         </div>
     </div>
@@ -48,28 +48,28 @@
       <span class="label label-default">{{ productToShow.category }}</span>
   </h3>
 
-  <div class="row">
+  <div class="row" >
 
     <div class="col-md-3 col-sm-6 mb-4">
-      <a href="https://aaart.herokuapp.com/product/59df9a7238982b0f3fac16d8">
+      <a href="./product/59df9a7238982b0f3fac16d8">
         <img class="img-fluid" src="https://az616578.vo.msecnd.net/files/2017/03/05/636242731472300906-828169648_MODERN%20ARRRTT.png" alt="">
       </a>
     </div>
 
     <div class="col-md-3 col-sm-6 mb-4">
-      <a href="https://aaart.herokuapp.com/product/59df9a7238982b0f3fac16da">
+      <a href="./product/59df9a7238982b0f3fac16da">
         <img class="img-fluid" src="http://4fs63j47srdk3eoohz18a6ij182.wpengine.netdna-cdn.com/wp-content/uploads/INDIA-10841-900x600.jpg" alt="">
       </a>
     </div>
 
     <div class="col-md-3 col-sm-6 mb-4">
-      <a href="https://aaart.herokuapp.com/product/59df9a7238982b0f3fac16e3">
+      <a href="./product/59df9a7238982b0f3fac16e3">
         <img class="img-fluid" src="https://d32dm0rphc51dk.cloudfront.net/DDGTrZ0UBLS9AdytythNOg/larger.jpg" alt="">
       </a>
     </div>
 
     <div class="col-md-3 col-sm-6 mb-4">
-      <a href="https://aaart.herokuapp.com/product/59df9a7238982b0f3fac16db">
+      <a href="./product/59df9a7238982b0f3fac16db">
         <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaBAz-WkBs-b-XWsHmKUyaEp5P4JwRRej3TnRv73qUBXae5y895w" alt="">
       </a>
     </div>
@@ -81,6 +81,3 @@
 
 
 
-  <!-- <ul>
-    <li>{{ review.name }}: {{ review.description }}</li>
-  </ul> -->
