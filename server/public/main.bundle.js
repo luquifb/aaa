@@ -685,7 +685,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h2 {\n  text-align: center;\n  padding: 30px;\n}\n\n.slider {\n  height: 500px;\n  width: 800px;\n}\n\n.btn {\n  margin: 10px;\n}\n\n.cta {\n  margin: 80px;\n}\n\n.card-img-top {\n  width: 255px;\n  height: 150px;\n  border-radius: 7px;\n}\n\n.jumbotron-image {\n  background-image: url(\"http://gabyherbstein.com/files/fotos/894.jpg\");\n   /*background-image: url(\"https://learnodo-newtonic.com/wp-content/uploads/2017/02/Metamorphosis-of-Narcissus-1937-Salvador-Dali.jpg\"); */\n}\n\n.display-3, .lead {\n  color: #FFF;\n}\n\n.card-text {\n  color: #555;\n}\n\n.heading {\n  margin: 30px;\n  color: #FFF;\n}\n\n.card-title {\n  margin: 20px;\n}\n\n.color {\n  border-radius: 7px;\n  height: 220px;\n  color: #444444;\n  padding: 10px;\n  \n}\n\nsmall {\n  font-size: 18px;\n}\n\n.white {\n  color: #666;\n}\n", ""]);
+exports.push([module.i, "h2 {\n  text-align: center;\n  padding: 30px;\n}\n\n.slider {\n  height: 500px;\n  width: 800px;\n}\n\n.btn {\n  margin: 10px;\n}\n\n.cta {\n  margin: 80px;\n}\n\n.card-img-top {\n  width: 255px;\n  height: 150px;\n  border-radius: 7px;\n}\n\n.jumbotron-image {\n  background-image: url(\"http://gabyherbstein.com/files/fotos/894.jpg\");\n   /*background-image: url(\"https://learnodo-newtonic.com/wp-content/uploads/2017/02/Metamorphosis-of-Narcissus-1937-Salvador-Dali.jpg\"); */\n}\n\n.display-3, .lead {\n  color: #FFF;\n}\n\n.card-text {\n  color: #555;\n}\n\n.heading {\n  margin: 30px;\n  color: #FFF;\n}\n\n.card-title {\n  margin: 20px;\n}\n\n.color {\n  border-radius: 7px;\n  color: #444444;  \n}\n\nsmall {\n  font-size: 18px;\n}\n\n.white {\n  color: #666;\n}\n", ""]);
 
 // exports
 
