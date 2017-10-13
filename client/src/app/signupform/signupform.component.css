@@ -16,7 +16,7 @@ form {
 }
 
 .jumbotron {
-    width: 50%;
+    width: 60%;
     height: 50%;   
-    margin-left: 300px;  
+    display: inline-block;
 }

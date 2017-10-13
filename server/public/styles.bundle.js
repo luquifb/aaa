@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody {\n    font-family: 'Roboto', sans-serif;\n}\n\nh1, h2, h3, h4, h5 {\n    /* text-transform: capitalize; */\n}\n\n.thumbnail {\n    border-radius: 7px;\n    /* color: #FFF; */\n  }\n\n  .left {\n      text-align: left;\n  }\n\n  .right {\n      text-align: right;\n  }\n\n.container {\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody {\n    font-family: 'Roboto', sans-serif;\n}\n\nh1, h2, h3, h4, h5 {\n    /* text-transform: uppercase; */\n}\n\n.thumbnail {\n    border-radius: 7px;\n    /* color: #FFF; */\n  }\n\n  .left {\n      text-align: left;\n  }\n\n  .right {\n      text-align: right;\n  }\n\n.container {\n    text-align: center;\n}\n", ""]);
 
 // exports
 
